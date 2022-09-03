@@ -221,8 +221,8 @@ input:focus {
 .more_dropdown1 {
   display: block;
   position: absolute;
-  top: 14%;
-  right: 21.5%;
+  width: 500%;
+  top: 180%;
   z-index: 1000;
   background-color: #000000;
   line-height: 215%;
@@ -235,15 +235,15 @@ input:focus {
 .more_dropdown li:hover {
   opacity: 0.5;
 }
-.login{
+.login {
   display: none;
 }
-.login1{
+.login1 {
   display: block;
   position: absolute;
   top: 16%;
   right: 2%;
-  background-color:black;
+  background-color: black;
   width: 20%;
   height: 15%;
   z-index: 10000;
@@ -252,7 +252,7 @@ input:focus {
   border-radius: 2%;
 }
 
-.login button{
+.login button {
   width: 80%;
   padding: 3%;
   background-color: red;
@@ -260,22 +260,22 @@ input:focus {
   font-weight: bolder;
   cursor: pointer;
 }
-.toplogin{
+.toplogin {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
-.toplogin>h4{
+.toplogin > h4 {
   color: red;
 }
-.toplogin h3{
+.toplogin h3 {
   cursor: pointer;
 }
 /* scrollbarr.................................................. */
 /* width */
 ::-webkit-scrollbar {
-  width:6px;
+  width: 6px;
   height: 20px;
 }
 
@@ -284,31 +284,30 @@ input:focus {
   /* box-shadow: inset 0 0 5px grey;  */
   border-radius: 10px;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(198, 197, 197, 0.582); 
+  background: rgba(198, 197, 197, 0.582);
   border-radius: 10px;
 }
 
-Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(198, 197, 197); 
+Handle on hover */ ::-webkit-scrollbar-thumb:hover {
+  background: rgb(198, 197, 197);
 }
 /* responsive----------------------------------------------------- */
-.header_nav1-right  i {
+.header_nav1-right i {
   margin: 0 10px;
 }
-.login3{
+.login3 {
   display: none;
 }
-.login4{
+.login4 {
   display: block;
   position: absolute;
   top: 18%;
   right: 2%;
   z-index: 1000;
-  background-color:black;
+  background-color: black;
   width: 20%;
   height: 15%;
   z-index: 10000;
@@ -317,7 +316,7 @@ Handle on hover */
   border-radius: 2%;
   padding-bottom: 7.5%;
 }
-.login3 button{
+.login3 button {
   width: 80%;
   padding: 3%;
   background-color: red;
@@ -325,16 +324,16 @@ Handle on hover */
   font-weight: bolder;
   cursor: pointer;
 }
-.toplogin3{
+.toplogin3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
-.toplogin3>h4{
+.toplogin3 > h4 {
   color: red;
 }
-.toplogin3 h3{
+.toplogin3 h3 {
   color: white;
   cursor: pointer;
 }
@@ -346,12 +345,11 @@ Handle on hover */
   height: 8%;
   font-size: larger;
   background-color: red;
-cursor: pointer;
+  cursor: pointer;
   color: white;
   position: absolute;
   padding-top: 5px;
   left: 100%;
- 
 }
 .left_aside-display {
   display: block;
@@ -364,26 +362,24 @@ cursor: pointer;
   /* background-color: #000000; */
 }
 .left_aside > .top {
- 
   height: 80%;
   overflow-y: scroll;
   scroll-behavior: smooth;
   background-color: #000000;
 }
-.top img{
+.top img {
   padding: 0 40px 0 0;
 }
 .left_aside > .bottom {
   background-color: rgb(0, 0, 0);
   height: 20%;
- padding-right: 90px;
+  padding-right: 90px;
 }
-.bottom{
+.bottom {
   padding-top: 30px;
   padding-right: 30px;
 }
-.bottom i{
-
+.bottom i {
   padding: 6px;
   color: white;
 }
@@ -405,7 +401,6 @@ cursor: pointer;
   width: 40%;
   padding: 2%;
   cursor: pointer;
-  
 }
 .lists_link {
   display: block;
@@ -418,26 +413,25 @@ cursor: pointer;
   display: block;
   padding: 40px;
 }
-.menu_link1 h3{
+.menu_link1 h3 {
   text-align: left;
-  margin: 0 0  10% 0;
+  margin: 0 0 10% 0;
   font-size: medium;
   font-weight: normal;
   border-bottom: 1px solid rgb(120, 117, 117);
-
 }
-.moreplus{
+.moreplus {
   display: none;
 }
-.moreplus1{
+.moreplus1 {
   display: block;
   list-style: none;
   padding: 20px;
 }
-.moreplus1 li{
+.moreplus1 li {
   padding-bottom: 10px;
 }
-.more1 i{
+.more1 i {
   margin-left: 80%;
 }
 .btn_headers {
@@ -496,9 +490,8 @@ cursor: pointer;
   }
   .btn-left {
     top: 58%;
-    
   }
-  .btn-right{
+  .btn-right {
     top: 58%;
   }
 }

@@ -181,4 +181,3 @@ header_banner.style.display = "none"
 collections.style.display="block"
 right_aside.classList.remove("right_aside1")
  })
-

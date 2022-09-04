@@ -1,0 +1,222 @@
+body {
+    background-color: black;
+}
+
+.heading-of-best-seller {
+    color: aliceblue;
+    text-align: center;
+}
+
+.best-seller-wrapper-div {
+    display: block;
+    position: relative;
+    width: auto;
+}
+
+.container1 {
+    display: flex;
+    gap: 5px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    justify-content: space-around;
+    margin-left: -130px;
+    position: absolute;
+    top: 8px;
+    animation: 3s ease-in 1s infinite reverse both running slidein;
+
+}
+
+h4 {
+    height: 100px;
+    color: rgb(0, 0, 0);
+    background-color: black;
+
+
+}
+
+#redstar {
+    color: red;
+    background-color: red;
+}
+
+.best-seller-div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    position: relative;
+}
+
+.flash {
+    width: 50px;
+    font-size: small;
+    height: 15px;
+    padding: 2px;
+    background-color: rgb(69, 227, 255);
+    position: absolute;
+    z-index: 10;
+    border-radius: 0 7px 7px 0;
+    top: 15px;
+    text-align: right;
+}
+
+.red {
+    background-color: red;
+    color: white;
+    width: 110px;
+    height: auto;
+    text-align: start;
+
+}
+
+.white {
+    background-color: aliceblue;
+    width: 90px;
+    color: red;
+}
+
+.hello {
+    background-color: red;
+}
+
+
+.wrapper-of-best-seller-images {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.best-seller-image-front,
+.best-seller-image-back {
+    width: 250px;
+    position: absolute;
+    background-color: rgb(219, 215, 215);
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+    -webkit-animation: ease-in-out;
+    transition: 0.7s;
+}
+
+
+.best-seller-image-back:hover {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.inside-best-seller {
+    position: absolute;
+    top: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 0 10px 10px;
+    line-height: 0;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: auto;
+}
+
+
+.button-flash-sale {
+    background-color: rgb(255, 188, 32);
+    width: 90%;
+    border-radius: 7px;
+    padding: 5px;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+
+.red-button {
+    background-color: red;
+    color: white;
+}
+
+.button-flash-sale:hover {
+    cursor: pointer;
+}
+
+.price-and-discount {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.earlier-price {
+    font-size: small;
+    opacity: 0.7;
+    text-decoration: line-through;
+    line-height: 0;
+}
+
+
+hr {
+    z-index: 100;
+    width: 90%;
+    color: black;
+}
+
+h5 {
+    font-size: large;
+    color: maroon;
+    font-style: bold;
+    margin-left: -100px;
+}
+
+.save-money {
+    margin-left: -70px;
+    margin-top: 0px;
+}
+
+.icon-para {
+    font-size: small;
+    align-self: flex-start;
+    word-spacing: 7px;
+    margin-left: 0px;
+}
+
+.visible {
+    display: none;
+    visibility: hidden;
+
+}
+
+.container2 {
+    display: flex;
+    gap: 5px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    justify-content: space-around;
+    margin-left: -130px;
+    position: absolute;
+    top: 8px;
+}
+
+
+.change-carousel-button-best-seller {
+    position: absolute;
+    right: 0%;
+    top: 230px;
+    z-index: 100;
+    width: 50px;
+    height: 40px;
+    background-color: aliceblue;
+    color: red;
+    font-size: xx-large;
+    border: none;
+    border-radius: 5px;
+}
+
+.change-carousel-button-best-seller:hover {
+    cursor: pointer;
+    transition: opacity .15s ease-in-out, visibility .15s ease-in-out, transform .15s ease-in-out;
+    transition-property: opacity, visibility, transform;
+    transition-duration: 0.15s, 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s, 0s;
+}

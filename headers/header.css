@@ -128,7 +128,7 @@ button {
   color: #ff000052;
 }
 .btn-left {
-  position: absolute;
+  position:absolute;
   top: 43%;
   cursor: pointer;
 }
@@ -136,7 +136,7 @@ button {
   color: rgba(255, 0, 0, 0.895);
 }
 .btn-right {
-  position: absolute;
+  position:absolute;
   top: 43%;
   right: 0;
   cursor: pointer;
@@ -318,7 +318,7 @@ input:focus {
 .login4 {
   display: block;
   position: fixed;
-  top: 9%;
+  top: 15%;
   right: 2%;
   z-index: 1000;
   background-color: black;
@@ -331,6 +331,7 @@ input:focus {
   padding-bottom: 7.5%;
 }
 .login3 button {
+
   width: 80%;
   padding: 3%;
   background-color: red;
@@ -512,10 +513,11 @@ input:focus {
     right: 8%;
   }
   .btn-left {
-    top: 58%;
+    top: 64%;
   }
   .btn-right {
-    top: 58%;
+   
+    top: 64%;
   }
 }
 

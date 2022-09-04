@@ -10,7 +10,7 @@ body {
   background-color: black;
 }
 a {
-  text-decoration: none;
+  text-decoration: none ;
   color: white;
 }
 i {
@@ -20,14 +20,27 @@ i {
 /* <<<<<<<<<<<<<<<<<<<<<<<Header>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 .header_alert {
+  
   padding: 0.2% 0 0.5% 0;
-  text-align: center;
+  text-align: center ;
   background-color: rgb(255, 0, 0);
+}
+.header_alert p{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 .header_alert > a {
   color: white;
   font-weight: lighter;
   font-size: medium;
+}
+.header_nav{
+  position: sticky;
+  background-color: #000000;
+  width: 100%;
+ z-index: 1000;
+  top: 0;
 }
 
 .header_nav > nav {
@@ -76,6 +89,9 @@ li i {
 .hover-underline-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+a:hover{
+  color: white !important;
 }
 
 .header-input {
@@ -188,21 +204,23 @@ input:focus {
 .shop_show1 {
   display: block;
   position: absolute;
+  left: 0;
+  top: 60px;
   z-index: 100;
 }
 
 .shop-content {
-  margin: 0 auto;
+  padding:50px 0 50px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #000000;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
 }
 .shop-content img {
   width: 80%;
-  height: 100%;
+  height: 80%;
 }
 .shop-content img:hover {
   opacity: 0.5;
@@ -218,7 +236,7 @@ input:focus {
 .more_dropdown {
   display: none;
 }
-.more_dropdown1 {
+.more_dropdown1{
   display: block;
   position: absolute;
   width: 500%;
@@ -240,12 +258,12 @@ input:focus {
 }
 .login1 {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 16%;
   right: 2%;
   background-color: black;
   width: 20%;
-  height: 15%;
+  height:17%;
   z-index: 10000;
   text-align: center;
   font-size: small;
@@ -273,26 +291,22 @@ input:focus {
   cursor: pointer;
 }
 /* scrollbarr.................................................. */
-/* width */
+
 ::-webkit-scrollbar {
   width: 6px;
-  height: 20px;
+  height: 6px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 5px grey;  */
   border-radius: 10px;
+  background-color: rgb(223, 223, 223);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(198, 197, 197, 0.582);
+  background: rgba(119, 118, 118, 0.582);
   border-radius: 10px;
 }
-
-Handle on hover */ ::-webkit-scrollbar-thumb:hover {
-  background: rgb(198, 197, 197);
+ ::-webkit-scrollbar-thumb:hover {
+  background: rgb(46, 46, 46);
 }
 /* responsive----------------------------------------------------- */
 .header_nav1-right i {
@@ -303,13 +317,13 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
 }
 .login4 {
   display: block;
-  position: absolute;
-  top: 18%;
+  position: fixed;
+  top: 9%;
   right: 2%;
   z-index: 1000;
   background-color: black;
   width: 20%;
-  height: 15%;
+  height: 20%;
   z-index: 10000;
   text-align: center;
   font-size: small;
@@ -323,6 +337,7 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
   color: white;
   font-weight: bolder;
   cursor: pointer;
+  margin: 10px;
 }
 .toplogin3 {
   display: flex;
@@ -353,16 +368,17 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
 }
 .left_aside-display {
   display: block;
-  position: absolute;
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   width: 38%;
-  height: 100%;
+  height: 100vh;
   box-shadow: 320px 0px 0px 1100px rgba(0, 0, 0, 0.2);
+  text-align: center;
   /* background-color: #000000; */
 }
 .left_aside > .top {
-  height: 80%;
+  height: 80vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
   background-color: #000000;
@@ -372,7 +388,7 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
 }
 .left_aside > .bottom {
   background-color: rgb(0, 0, 0);
-  height: 20%;
+  height: 20vh;
   padding-right: 90px;
 }
 .bottom {
@@ -445,6 +461,7 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
   display: none;
 }
 .header_nav1 > nav {
+ 
   margin: 5px 30px;
   display: flex;
   justify-content: space-between;
@@ -467,11 +484,17 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
   width: 50.5%;
   margin: 0 0 7px 3%;
 }
+
 @media only screen and (max-width: 1220px) {
   .header_nav {
     display: none;
   }
   .header_nav1 {
+   position: sticky;
+    background-color: #000000;
+    width: 100%;
+   z-index: 1000;
+    top: 0;
     display: block;
   }
   .Search_list {
@@ -495,3 +518,5 @@ Handle on hover */ ::-webkit-scrollbar-thumb:hover {
     top: 58%;
   }
 }
+
+

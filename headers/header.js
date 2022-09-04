@@ -60,25 +60,32 @@ search_close.addEventListener("click", () => {
 
 const nav_shop = document.querySelector(".nav_shop");
 const shop_show = document.querySelector(".shop_show");
-
+const nav_more = document.querySelector(".nav_more");
+const more_dropdown = document.querySelector(".more_dropdown");
 nav_shop.addEventListener("mouseover", () => {
   shop_show.classList.add("shop_show1");
 });
-
-function shopremove() {
-  shop_show.classList.remove("shop_show1");
-}
-
-const nav_more = document.querySelector(".nav_more");
-const more_dropdown = document.querySelector(".more_dropdown");
 nav_more.addEventListener("mouseover", () => {
-  console.log("hai");
-
   more_dropdown.classList.add("more_dropdown1");
 });
 
+function remove() {
+  if (shop_show.classList.contains("shop_show1")) {
+    shop_show.classList.remove("shop_show1");
+  }
+  if (more_dropdown.classList.contains("more_dropdown1")) {
+    more_dropdown.classList.remove("more_dropdown1");
+  }
+}
 function moreremove() {
-  more_dropdown.classList.remove("more_dropdown1");
+  if (more_dropdown.classList.contains("more_dropdown1")) {
+    more_dropdown.classList.remove("more_dropdown1");
+  }
+}
+function shopremove() {
+  if (shop_show.classList.contains("shop_show1")) {
+    shop_show.classList.remove("shop_show1");
+  }
 }
 
 const list = document.querySelector(".lists");
@@ -112,7 +119,7 @@ bar.addEventListener("click", () => {
 const bar_close = document.querySelector(".bar_close");
 bar_close.addEventListener("click", () => {
   left_aside.classList.remove("left_aside-display");
-  // body.style.overflow ="scroll"
+  body.style.overflow = "scroll";
 });
 const moreicon = document.querySelector(".moreicon");
 const moreplus = document.querySelector(".moreplus");
@@ -122,7 +129,6 @@ moreicon.addEventListener("click", () => {
     moreicon.classList.remove("fa-plus");
     moreplus.classList.add("moreplus1");
     // body.style.overflow = "scroll";
-
   } else {
     moreicon.classList.remove("fa-minus");
     moreicon.classList.add("fa-plus");
@@ -130,21 +136,21 @@ moreicon.addEventListener("click", () => {
   }
 });
 
-const logadd = document.querySelector(".logadd")
-const login = document.querySelector(".login")
-const cross = document.querySelector(".cross")
+const logadd = document.querySelector(".logadd");
+const login = document.querySelector(".login");
+const cross = document.querySelector(".cross");
 logadd.addEventListener("click", () => {
   login.classList.add("login1");
 });
-cross.addEventListener("click",()=>{
+cross.addEventListener("click", () => {
   login.classList.remove("login1");
-})
-const logadd3 = document.querySelector(".logadd3")
-const login3 = document.querySelector(".login3")
-const cross3 = document.querySelector(".cross3")
+});
+const logadd3 = document.querySelector(".logadd3");
+const login3 = document.querySelector(".login3");
+const cross3 = document.querySelector(".cross3");
 logadd3.addEventListener("click", () => {
   login3.classList.add("login4");
 });
-cross3.addEventListener("click",()=>{
+cross3.addEventListener("click", () => {
   login3.classList.remove("login4");
-})
+});

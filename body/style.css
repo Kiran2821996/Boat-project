@@ -2,7 +2,8 @@ body {
     background-color: black;
 }
 
-.heading-of-best-seller,.heading-of-daily-deals {
+.heading-of-best-seller,
+.heading-of-daily-deals {
     color: aliceblue;
     text-align: center;
 }
@@ -14,7 +15,8 @@ body {
     margin-left: 250px;
 }
 
-.container1, .container3 {
+.container1,
+.container3 {
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -24,7 +26,9 @@ body {
     justify-content: space-around;
     margin-left: -130px;
 }
-.container2,.container4 {
+
+.container2,
+.container4 {
     display: flex;
     gap: 20px;
     padding: 20px;
@@ -198,8 +202,8 @@ h5 {
 
 
 
-.change-carousel-button-best-seller-right ,
-.change-carousel-button-best-seller-right1{
+.change-carousel-button-best-seller-right,
+.change-carousel-button-best-seller-right1 {
     position: absolute;
     right: 0%;
     top: 230px;
@@ -212,8 +216,9 @@ h5 {
     border: none;
     border-radius: 5px;
 }
+
 .change-carousel-button-best-seller-left,
-.change-carousel-button-best-seller-left1{
+.change-carousel-button-best-seller-left1 {
     position: absolute;
     left: -250px;
     top: 230px;
@@ -230,11 +235,11 @@ h5 {
 
 .change-carousel-button-best-seller-left,
 .change-carousel-button-best-seller-left1,
-.change-carousel-button-best-seller-right ,
+.change-carousel-button-best-seller-right,
 .change-carousel-button-best-seller-right1:hover {
     cursor: pointer;
 }
 
-.change-me{
+.change-me {
     left: -250px;
 }

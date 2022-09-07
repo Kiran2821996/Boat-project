@@ -407,7 +407,20 @@ function generate() {
       console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
-        html = `<div class="main">
+        if(result[i].tag== undefined){
+          html = `<div class="main">
+          <img src="${result[i].productImages[0]} width="100px" height="150px" >
+      <h3 class="productname">${result[i].productName}</h3>
+      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
+      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
+      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
+          result[i].offer
+        }%)</h3>
+      <button style="background-color:white">ADD TO CART</button>
+       </div>`;
+        home_audio.innerHTML += html;
+        }else{
+          html = `<div class="main">
           <h3>${result[i].tag}</h3>
           <img src="${result[i].productImages[0]} width="100px" height="150px" >
       <h3 class="productname">${result[i].productName}</h3>
@@ -419,6 +432,8 @@ function generate() {
       <button style="background-color:white">ADD TO CART</button>
        </div>`;
         home_audio.innerHTML += html;
+        }
+       
       }
     });
 }

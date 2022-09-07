@@ -1,0 +1,16 @@
+.productname{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  
+}
+.daily_deals,
+.best_sellers,
+.biggest_launch,
+.smart_watches,
+.trending_wireless,
+.top_earbuds,
+.trending_wired,.trending_anc,.home_audio,.dc,.marvel{
+  display: flex;
+}

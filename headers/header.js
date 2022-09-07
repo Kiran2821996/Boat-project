@@ -154,30 +154,33 @@ logadd3.addEventListener("click", () => {
 cross3.addEventListener("click", () => {
   login3.classList.remove("login4");
 });
-const right_aside=document.querySelector(".right_aside")
-const cart = document.querySelector(".cart")
+const right_aside = document.querySelector(".right_aside");
+const cart = document.querySelector(".cart");
 
-const cart1 = document.querySelector(".cart1")
-const cart_close = document.querySelector(".cart_close")
+const cart1 = document.querySelector(".cart1");
+const cart_close = document.querySelector(".cart_close");
 
-cart.addEventListener("click",()=>{
- right_aside.classList.add("right_aside1")
-})
-cart_close.addEventListener("click",()=>{
-  right_aside.classList.remove("right_aside1")
-})
-cart1.addEventListener("click",()=>{
-  right_aside.classList.add("right_aside1")
- })
- cart_close.addEventListener("click",()=>{
-   right_aside.classList.remove("right_aside1")
- })
+cart.addEventListener("click", () => {
+  right_aside.classList.add("right_aside1");
+});
+cart_close.addEventListener("click", () => {
+  right_aside.classList.remove("right_aside1");
+});
+cart1.addEventListener("click", () => {
+  right_aside.classList.add("right_aside1");
+});
+cart_close.addEventListener("click", () => {
+  right_aside.classList.remove("right_aside1");
+});
 
- const strtbtn = document.querySelector(".strtbtn")
-const header_banner = document.querySelector(".header_banner")
-const collections = document.querySelector(".collections")
- strtbtn.addEventListener("click",()=>{
-header_banner.style.display = "none"
-collections.style.display="block"
-right_aside.classList.remove("right_aside1")
- })
+const strtbtn = document.querySelector(".strtbtn");
+const header_banner = document.querySelector(".header_banner");
+const collections = document.querySelector(".collections");
+strtbtn.addEventListener("click", () => {
+  header_banner.style.display = "none";
+  collections.style.display = "block";
+  right_aside.classList.remove("right_aside1");
+});
+
+//
+

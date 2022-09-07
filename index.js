@@ -509,7 +509,7 @@ function generate() {
         }
       }
     });
-  const data10 = { description: "Home Audio" };
+    const data10 = { description: "Marvel" };
   fetch("http://localhost:3333/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
@@ -540,6 +540,77 @@ function generate() {
          <button class="button-flash-sale red-button">ADD TO CART</button>
      </div></div>  `;
           home_audio.innerHTML += html;
+        if (result[i].tag.length > 5) {
+          html = `<div class="main">
+            <h3>${result[i].tag}</h3>
+            <img src="${
+              result[i].productImages[0]
+            } width="100px" height="150px" >
+        <h3 class="productname">${result[i].productName}</h3>
+        <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
+        <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
+        <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
+            result[i].offer
+          }%)</h3>
+        <button style="background-color:white">ADD TO CART</button>
+         </div>`;
+          marvel.innerHTML += html;
+        } else {
+          html = `<div class="main">
+            <h3>⚡ ${result[i].tag}</h3>
+            <img src="${
+              result[i].productImages[1]
+            } width="100px" height="150px" >
+        <h3 class="productname">${result[i].productName}</h3>
+        <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
+        <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
+        <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
+            result[i].offer
+          }%)</h3>
+        <button style="background-color:white">ADD TO CART</button>
+         </div>`;
+          marvel.innerHTML += html;
+        }
+      }
+    });
+  const data11 = { description: "Home Audio" };
+  fetch("http://localhost:3333/boat/Products", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data11),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      // container.innerHTML = null;
+      for (let i = 0; i < result.length; i++) {
+        if(result[i].tag== undefined){
+          html = `<div class="main">
+          <img src="${result[i].productImages[0]} width="100px" height="150px" >
+      <h3 class="productname">${result[i].productName}</h3>
+      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
+      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
+      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
+          result[i].offer
+        }%)</h3>
+      <button style="background-color:white">ADD TO CART</button>
+       </div>`;
+        home_audio.innerHTML += html;
+        }else{
+          html = `<div class="main">
+          <h3>${result[i].tag}</h3>
+          <img src="${result[i].productImages[0]} width="100px" height="150px" >
+      <h3 class="productname">${result[i].productName}</h3>
+      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
+      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
+      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
+          result[i].offer
+        }%)</h3>
+      <button style="background-color:white">ADD TO CART</button>
+       </div>`;
+        home_audio.innerHTML += html;
         }
 
         else {

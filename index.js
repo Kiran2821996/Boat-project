@@ -50,7 +50,7 @@ function generate() {
             ` <div class="main">
          <div class="best-seller-div">
           <div class="wrapper-of-best-seller-images">
-          <div class="flash">⚡${result[i].tag}</div>
+          <div class="flash">🗲${result[i].tag}</div>
          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -106,7 +106,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -162,7 +162,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -217,7 +217,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -272,7 +272,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -327,7 +327,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -382,7 +382,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -437,7 +437,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -492,7 +492,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -547,7 +547,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
@@ -604,7 +604,7 @@ function generate() {
             ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
-           <div class="flash">⚡${result[i].tag}</div>
+           <div class="flash">🗲${result[i].tag}</div>
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>

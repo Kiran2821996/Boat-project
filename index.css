@@ -77,8 +77,8 @@ h4 {
 
 .flash {
   width: auto;
-  font-size: small;
-  height: 1.5rem;
+  font-size:medium;
+  height: 2rem;
   padding: 5px;
   background-color: #fcc50b;
   position: absolute;
@@ -86,6 +86,7 @@ h4 {
   border-radius: 0 7px 7px 0;
   top: 15px;
   font-weight: bolder;
+  color: black;
 }
 
 .red {

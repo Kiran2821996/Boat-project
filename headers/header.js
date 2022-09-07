@@ -157,7 +157,7 @@ cross3.addEventListener("click", () => {
 const right_aside = document.querySelector(".right_aside");
 const cart = document.querySelector(".cart");
 
-const cart1 = document.querySelector(".cart1");
+const cart1 = document.querySelector(".cart5");
 const cart_close = document.querySelector(".cart_close");
 
 cart.addEventListener("click", () => {

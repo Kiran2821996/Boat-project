@@ -33,7 +33,7 @@ function generate() {
          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-        <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+        <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} ${result[i].noOfReviews} reviews</p>
         <hr>
         <div class="price-and-discount">
             <h5 class = "current-price">${result[i].price} </h5>
@@ -54,7 +54,7 @@ function generate() {
          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-        <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+        <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
         <hr>
         <div class="price-and-discount">
             <h5 class = "current-price">${result[i].price} </h5>
@@ -89,7 +89,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -110,7 +110,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -145,7 +145,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -166,7 +166,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -200,7 +200,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -221,7 +221,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -255,7 +255,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -276,7 +276,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -310,7 +310,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -331,7 +331,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -365,7 +365,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -386,7 +386,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -420,7 +420,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -441,7 +441,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -475,7 +475,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -496,7 +496,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -530,7 +530,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -551,7 +551,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>
@@ -586,7 +586,7 @@ function generate() {
         <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
         <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
    </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-       <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+       <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
        <hr>
        <div class="price-and-discount">
            <h5 class = "current-price">${result[i].price} </h5>
@@ -608,7 +608,7 @@ function generate() {
           <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
           <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
      </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
-         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <hr>
          <div class="price-and-discount">
              <h5 class = "current-price">${result[i].price} </h5>

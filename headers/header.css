@@ -288,6 +288,7 @@ input:focus {
 }
 .toplogin > h4 {
   color: red;
+  height: 2%;
 }
 .toplogin h3 {
   cursor: pointer;
@@ -350,6 +351,7 @@ input:focus {
 }
 .toplogin3 > h4 {
   color: red;
+  height: 2%;
 }
 .toplogin3 h3 {
   color: white;

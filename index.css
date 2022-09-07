@@ -58,7 +58,7 @@ h4 {
   height: 100px;
   color: rgb(0, 0, 0);
   background-color: black;
-
+  font-weight: bolder;
 
 }
 
@@ -85,6 +85,7 @@ h4 {
   z-index: 10;
   border-radius: 0 7px 7px 0;
   top: 15px;
+  font-weight: bolder;
 }
 
 .red {
@@ -147,6 +148,7 @@ h4 {
   align-items: center;
   width: 250px;
   height: auto;
+  font-weight: bolder;
 }
 
 
@@ -158,6 +160,7 @@ h4 {
   border: none;
   color: rgb(255, 255, 255);
   font-size: large;
+  font-weight: bolder;
 }
 
 .red-button {
@@ -182,6 +185,7 @@ h4 {
   color: black;
   text-decoration: line-through;
   line-height: 0;
+  font-weight: bolder;
 }
 
 
@@ -191,12 +195,18 @@ hr {
   color: black;
 }
 
+.current-price:before {
+  content: attr(title) "₹ ";
+  color: red;
+}
 .current-price {
+  
   font-size: large;
-  color: maroon;
+  color: rgb(255, 0, 0);
   width: auto;
   margin-left: -7rem;
   font-style: bold;
+  font-weight: bolder;
 }
 
 .save-money {
@@ -205,11 +215,13 @@ hr {
   color: black;
   font-size: smaller;
   margin-top: 0px;
+  font-weight: bolder;
 }
 
 .icon-para {
+  padding: 10px;
   font-size: small;
+  font-weight: bolder;
   color: black;
   align-self: flex-start;
-  word-spacing: 7px;
 }

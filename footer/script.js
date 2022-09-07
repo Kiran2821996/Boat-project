@@ -26,6 +26,9 @@ for (let i = 0; i < btn.length; i++) {
             case 3:
                 para1.innerHTML = arr[3]
                 break
+            case 4:
+                para1.innerHTML = arr[4]
+                break
         }
     });
 }

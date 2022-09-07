@@ -1,16 +1,214 @@
-.productname{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-  
+.productname {
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }
+
 .daily_deals,
 .best_sellers,
 .biggest_launch,
 .smart_watches,
 .trending_wireless,
 .top_earbuds,
-.trending_wired,.trending_anc,.home_audio,.dc,.marvel{
+.trending_wired,
+.trending_anc,
+.home_audio,
+.dc,
+.marvel {
   display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.heading-of-carousels {
+  color: aliceblue;
+  font-size: 2rem;
+  padding: 4rem;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+
+.heading-of-best-seller,
+.heading-of-daily-deals {
+  color: aliceblue;
+  text-align: center;
+}
+
+.best-seller-wrapper-div {
+  position: relative;
+  width: auto;
+  height: 30rem;
+  margin-left: 250px;
+}
+
+.main {
+  display: flex;
+  gap: 10rem;
+  width: 100%;
+  height: auto;
+  justify-content: space-around;
+}
+
+
+h4 {
+  height: 100px;
+  color: rgb(0, 0, 0);
+  background-color: black;
+
+
+}
+
+#redstar {
+  color: red;
+  background-color: red;
+}
+
+.best-seller-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 30px;
+  position: relative;
+}
+
+.flash {
+  width: auto;
+  font-size: small;
+  height: 1.5rem;
+  padding: 5px;
+  background-color: #fcc50b;
+  position: absolute;
+  z-index: 10;
+  border-radius: 0 7px 7px 0;
+  top: 15px;
+}
+
+.red {
+  background-color: red;
+  color: white;
+  width: 110px;
+  height: auto;
+  text-align: start;
+
+}
+
+.white {
+  background-color: aliceblue;
+  width: 90px;
+  color: red;
+}
+
+.hello {
+  background-color: red;
+}
+
+
+.wrapper-of-best-seller-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.best-seller-image-front {
+  width: 250px;
+  background-color: rgb(219, 215, 215);
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  transition: 0.7s;
+  position: absolute;
+}
+
+.best-seller-image-back {
+  width: 250px;
+  background-color: rgb(219, 215, 215);
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  transition: 0.7s;
+
+}
+
+
+.best-seller-image-front:hover {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.inside-best-seller {
+  background-color: rgb(255, 255, 255);
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 20px;
+  display: flex;
+  margin-top: -2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: auto;
+}
+
+
+.button-flash-sale {
+  background-color: rgb(255, 188, 32);
+  width: 90%;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: large;
+}
+
+.red-button {
+  background-color: red;
+  color: white;
+}
+
+.button-flash-sale:hover {
+  cursor: pointer;
+}
+
+.price-and-discount {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.earlier-price {
+  font-size: small;
+  opacity: 0.7;
+  width: auto;
+  color: black;
+  text-decoration: line-through;
+  line-height: 0;
+}
+
+
+hr {
+  z-index: 100;
+  width: 90%;
+  color: black;
+}
+
+.current-price {
+  font-size: large;
+  color: maroon;
+  width: auto;
+  margin-left: -7rem;
+  font-style: bold;
+}
+
+.save-money {
+  margin-left: -5rem;
+  width: auto;
+  color: black;
+  font-size: smaller;
+  margin-top: 0px;
+}
+
+.icon-para {
+  font-size: small;
+  color: black;
+  align-self: flex-start;
+  word-spacing: 7px;
 }

@@ -19,35 +19,50 @@ function generate() {
     },
     body: JSON.stringify(data1),
   })
+
+
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-        <h3>${result[i].tag}</h3>
-        <img src="${result[i].productImages[0]} width="100px" height="150px" >
-    <h3 class="productname">${result[i].productName}</h3>
-    <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-    <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-    <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-    <button style="background-color:white">ADD TO CART</button>
-     </div>`;
+          html = ` <div class="main">
+         <div class="best-seller-div">
+          <div class="wrapper-of-best-seller-images">
+          <div class="flash red">${result[i].tag}</div>
+         <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+         <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+    </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+        <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+        <hr>
+        <div class="price-and-discount">
+            <h5 class = "current-price">${result[i].price} </h5>
+            <p class="earlier-price">₹${result[i].originalPrice}</p>
+        </div>
+        <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+        <button class="button-flash-sale red-button">ADD TO CART</button>
+    </div></div>  `;
           best_sellers.innerHTML += html;
-        } else {
-          html = `<div class="main">
-        <h3>⚡ ${result[i].tag}</h3>
-        <img src="${result[i].productImages[0]} width="100px" height="150px" >
-    <h3 class="productname">${result[i].productName}</h3>
-    <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-    <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-    <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-    <button style="background-color:white">ADD TO CART</button>
-     </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+         <div class="best-seller-div">
+          <div class="wrapper-of-best-seller-images">
+          <div class="flash">⚡${result[i].tag}</div>
+         <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+         <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+    </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+        <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+        <hr>
+        <div class="price-and-discount">
+            <h5 class = "current-price">${result[i].price} </h5>
+            <p class="earlier-price">₹${result[i].originalPrice}</p>
+        </div>
+        <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+        <button class="button-flash-sale">ADD TO CART</button>
+    </div></div>  `;
           best_sellers.innerHTML += html;
         }
       }
@@ -63,34 +78,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-      <h3>${result[i].tag}</h3>
-      <img src="${result[i].productImages[0]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           daily_deals.innerHTML += html;
-        } else {
-          html = `<div class="main">
-      <h3>⚡ ${result[i].tag}</h3>
-      <img src="${result[i].productImages[1]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           daily_deals.innerHTML += html;
         }
       }
@@ -106,34 +134,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-      <h3>${result[i].tag}</h3>
-      <img src="${result[i].productImages[0]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           biggest_launch.innerHTML += html;
-        } else {
-          html = `<div class="main">
-      <h3>⚡ ${result[i].tag}</h3>
-      <img src="${result[i].productImages[1]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           biggest_launch.innerHTML += html;
         }
       }
@@ -148,34 +189,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-      <h3>${result[i].tag}</h3>
-      <img src="${result[i].productImages[0]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           smart_watches.innerHTML += html;
-        } else {
-          html = `<div class="main">
-      <h3>⚡ ${result[i].tag}</h3>
-      <img src="${result[i].productImages[1]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           smart_watches.innerHTML += html;
         }
       }
@@ -190,34 +244,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-      <h3>${result[i].tag}</h3>
-      <img src="${result[i].productImages[0]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           trending_wireless.innerHTML += html;
-        } else {
-          html = `<div class="main">
-      <h3>⚡ ${result[i].tag}</h3>
-      <img src="${result[i].productImages[1]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           trending_wireless.innerHTML += html;
         }
       }
@@ -232,34 +299,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-      <h3>${result[i].tag}</h3>
-      <img src="${result[i].productImages[0]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           top_earbuds.innerHTML += html;
-        } else {
-          html = `<div class="main">
-      <h3>⚡ ${result[i].tag}</h3>
-      <img src="${result[i].productImages[1]} width="100px" height="150px" >
-  <h3 class="productname">${result[i].productName}</h3>
-  <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-  <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-  <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-  <button style="background-color:white">ADD TO CART</button>
-   </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           top_earbuds.innerHTML += html;
         }
       }
@@ -274,34 +354,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length - 1; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-        <h3>${result[i].tag}</h3>
-        <img src="${result[i].productImages[0]} width="100px" height="150px" >
-    <h3 class="productname">${result[i].productName}</h3>
-    <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-    <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-    <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-    <button style="background-color:white">ADD TO CART</button>
-     </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           trending_wired.innerHTML += html;
-        } else {
-          html = `<div class="main">
-        <h3>⚡ ${result[i].tag}</h3>
-        <img src="${result[i].productImages[1]} width="100px" height="150px" >
-    <h3 class="productname">${result[i].productName}</h3>
-    <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-    <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-    <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-    <button style="background-color:white">ADD TO CART</button>
-     </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           trending_wired.innerHTML += html;
         }
       }
@@ -316,34 +409,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-          <h3>${result[i].tag}</h3>
-          <img src="${result[i].productImages[0]} width="100px" height="150px" >
-      <h3 class="productname">${result[i].productName}</h3>
-      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-      <button style="background-color:white">ADD TO CART</button>
-       </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           trending_anc.innerHTML += html;
-        } else {
-          html = `<div class="main">
-          <h3>⚡ ${result[i].tag}</h3>
-          <img src="${result[i].productImages[1]} width="100px" height="150px" >
-      <h3 class="productname">${result[i].productName}</h3>
-      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-      <button style="background-color:white">ADD TO CART</button>
-       </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           trending_anc.innerHTML += html;
         }
       }
@@ -358,38 +464,47 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = `<div class="main">
-            <h3>${result[i].tag}</h3>
-            <img src="${
-              result[i].productImages[0]
-            } width="100px" height="150px" >
-        <h3 class="productname">${result[i].productName}</h3>
-        <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-        <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-        <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-        <button style="background-color:white">ADD TO CART</button>
-         </div>`;
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
           dc.innerHTML += html;
-        } else {
-          html = `<div class="main">
-            <h3>⚡ ${result[i].tag}</h3>
-            <img src="${
-              result[i].productImages[1]
-            } width="100px" height="150px" >
-        <h3 class="productname">${result[i].productName}</h3>
-        <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-        <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-        <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-            result[i].offer
-          }%)</h3>
-        <button style="background-color:white">ADD TO CART</button>
-         </div>`;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
           dc.innerHTML += html;
         }
       }
@@ -404,36 +519,51 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
-        if(result[i].tag== undefined){
-          html = `<div class="main">
-          <img src="${result[i].productImages[0]} width="100px" height="150px" >
-      <h3 class="productname">${result[i].productName}</h3>
-      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-          result[i].offer
-        }%)</h3>
-      <button style="background-color:white">ADD TO CART</button>
-       </div>`;
-        home_audio.innerHTML += html;
-        }else{
-          html = `<div class="main">
-          <h3>${result[i].tag}</h3>
-          <img src="${result[i].productImages[0]} width="100px" height="150px" >
-      <h3 class="productname">${result[i].productName}</h3>
-      <h3>☆${result[i].rating}    ${result[i].noOfReviews} reviews</h3>
-      <h3>₹${result[i].price} ₹${result[i].originalPrice}</h3>
-      <h3>You Save: ₹ ${result[i].originalPrice - result[i].price} (${
-          result[i].offer
-        }%)</h3>
-      <button style="background-color:white">ADD TO CART</button>
-       </div>`;
-        home_audio.innerHTML += html;
+        if (result[i].tag == undefined) {
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash red">${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale red-button">ADD TO CART</button>
+     </div></div>  `;
+          home_audio.innerHTML += html;
         }
-       
+
+        else {
+          console.log(result[i].productImages[0])
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para">☆${result[i].rating} |☆${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
+          home_audio.innerHTML += html;
+        }
+
       }
     });
 }

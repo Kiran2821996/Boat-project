@@ -1163,6 +1163,27 @@ function generate() {
   
 }
 
+let marvelDiv = document.querySelector(".marvel-div")
+let dcDiv = document.querySelector(".dc-div")
+
+marvelDiv.addEventListener("click",()=>{
+  console.log("Whuiuuuuuuuuuuuuhukykfuutfyti")
+  dc.style.display = "none"
+  marvel.style.display = "flex"
+  marvelDiv.style.textDecoration = "underline red"
+  dcDiv.style.textDecoration = "underline white"
+  marvelDiv.style.transition = "1s"
+})
+dcDiv.addEventListener("click",()=>{
+  console.log("Whuiuuuuuuuuuuuuhukykfuutfyti")
+  marvel.style.display = "none"
+  dc.style.display = "flex"
+  dcDiv.style.textDecoration = "underline red"
+  marvelDiv.style.textDecoration = "underline white"
+  dc.style.transition = "1s ease-in"
+})
+
+
 generate();
 
 const cart_main = document.querySelector(".cart_main");
@@ -1249,21 +1270,3 @@ document.querySelector(".inc").addEventListener("click",()=>{
        
 })
 
-
-let marvelDiv = document.querySelector(".marvel-div")
-let dcDiv = document.querySelector(".dc-div")
-
-marvelHeading.addEventListener("click",()=>{
-  dc.style.display = "none"
-  marvel.style.display = "flex"
-  marvelDiv.style.textDecoration = "underline red"
-  dcDiv.style.textDecoration = "underline white"
-  marvelDiv.style.transition = "1s"
-})
-dcHeading.addEventListener("click",()=>{
-  marvel.style.display = "none"
-  dc.style.display = "flex"
-  dcDiv.style.textDecoration = "underline red"
-  marvelDiv.style.textDecoration = "underline white"
-  dc.style.transition = "1s ease-in"
-})

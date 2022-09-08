@@ -45,6 +45,7 @@
   width: auto;
   height: 30rem;
   margin-left: 250px;
+  border-radius: 10px 10px 0 0;
 }
 
 .main {
@@ -114,6 +115,7 @@ h4 {
 .wrapper-of-best-seller-images {
   display: flex;
   flex-direction: column;
+  border-radius: ;
 }
 
 .best-seller-image-front {

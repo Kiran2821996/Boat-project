@@ -295,7 +295,7 @@ input:focus {
 }
 /* scrollbarr.................................................. */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
@@ -310,7 +310,7 @@ input:focus {
 }
  ::-webkit-scrollbar-thumb:hover {
   background: rgb(46, 46, 46);
-}
+} */
 /* responsive----------------------------------------------------- */
 .header_nav1-right i {
   margin: 0 10px;

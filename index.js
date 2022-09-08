@@ -586,17 +586,18 @@ function generate() {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
-           <div class="wrapper-of-best-seller-images">
-          <video loop autoplay muted class="video-container-video" src="${result[i].productImages[0]}  alt="">
-     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+          <img class="video-div-absolute-image" src="${result[i].productImages[1]}   alt="">
+           <div class="wrapper-of-video">
+           <video loop autoplay muted class="video-container-video" src="${result[i].productImages[0]}  alt="">
+     </div><div class="inside-best-seller-video"> <h3 class="productname-video">${result[i].productName}</h3>
      <hr>
          <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
          <div class="red-tag-of-video">New Arrival</div>
          <div class="price-and-discount">
-             <h5 class = "current-price">${result[i].price} </h5>
-             <p class="earlier-price">₹${result[i].originalPrice}</p>
+             <h5 class = "current-price-video">${result[i].price} </h5>
+             <p class="earlier-price-video">₹${result[i].originalPrice}</p>
          </div>
-         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <p class="save-money-video">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
      </div></div>  `;
           videoContainer.innerHTML += html;
         }

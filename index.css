@@ -338,8 +338,10 @@ hr {
 
 
 .video-container::-webkit-scrollbar{
-  width: 0;
+  width: 100px;
  }
+
+
  .video-div-absolute-image{
    width: 3rem;
    height: 3rem;
@@ -382,3 +384,37 @@ hr {
   cursor: pointer;
 }
 
+.marvel::-webkit-scrollbar{
+  width: 100px;
+ }
+ .daily_deals::-webkit-scrollbar{
+  width: 100px;
+ }
+
+.best_sellers::-webkit-scrollbar{
+  width: 100px;
+ }
+ .top_earbuds::-webkit-scrollbar{
+  width: 100px;
+ }
+ .smart_watches::-webkit-scrollbar{
+  width: 100px;
+ }
+ .biggest_launch::-webkit-scrollbar{
+  width: 100px;
+ }
+ .trending_anc::-webkit-scrollbar{
+  width: 100px;
+ }
+ .trending_wired::-webkit-scrollbar{
+  width: 100px;
+ }
+ .trending_wireless::-webkit-scrollbar{
+  width: 100px;
+ }
+ .dc::-webkit-scrollbar{
+  width: 100px;
+ }
+ .home_audio::-webkit-scrollbar{
+  width: 100px;
+ }

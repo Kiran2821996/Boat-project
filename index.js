@@ -9,6 +9,9 @@ const trending_anc = document.querySelector(".trending_anc");
 const dc = document.querySelector(".dc");
 const marvel = document.querySelector(".marvel");
 const home_audio = document.querySelector(".home_audio");
+const videoContainer =document.querySelector(".video-container")
+const marvelHeading =document.querySelector(".marvel-div")
+const dcHeading =document.querySelector(".dc-div")
 
 function generate() {
   const data1 = { description: "best_sellers" };
@@ -523,7 +526,8 @@ function generate() {
       // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
-          html = ` <div class="main">
+          html = `
+          <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
            <div class="flash red">${result[i].tag}</div>
@@ -565,6 +569,64 @@ function generate() {
       }
      
     });
+// ------------------------------------------------------------------------
+    const data12 = { description: "video-products" };
+  fetch("http://localhost:3333/boat/Products", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data12),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      // console.log(result);
+      // container.innerHTML = null;
+      for (let i = 0; i < result.length; i++) {
+        if (result[i].tag.length > 5) {
+          html = ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+          <video loop autoplay muted class="video-container-video" src="${result[i].productImages[0]}  alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+     <hr>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
+         <div class="red-tag-of-video">New Arrival</div>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+     </div></div>  `;
+          videoContainer.innerHTML += html;
+        }
+
+        else {
+          html =
+            ` <div class="main">
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+           <div class="flash">⚡${result[i].tag}</div>
+          <img class="best-seller-image-front" src="${result[i].productImages[0]}  alt="">
+          <img class="best-seller-image-back" src="${result[i].productImages[1]}   alt="">
+     </div><div class="inside-best-seller"> <h3 class="productname">${result[i].productName}</h3>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${result[i].rating} -${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${result[i].originalPrice - result[i].price} (${result[i].offer}%)</p>
+         <button class="button-flash-sale">ADD TO CART</button>
+     </div></div>  `;
+          marvel.innerHTML += html;
+        }
+      }
+     
+    });
+
+
+// -----------------------------------------------------------------------------
   const data11 = { description: "Home Audio" };
   fetch("http://localhost:3333/boat/Products", {
     method: "POST", // or 'PUT'
@@ -625,3 +687,21 @@ function generate() {
 }
 
 generate();
+
+let marvelDiv = document.querySelector(".marvel-div")
+let dcDiv = document.querySelector(".dc-div")
+
+marvelHeading.addEventListener("click",()=>{
+  dc.style.display = "none"
+  marvel.style.display = "flex"
+  marvelDiv.style.textDecoration = "underline red"
+  dcDiv.style.textDecoration = "underline white"
+  marvelDiv.style.transition = "1s"
+})
+dcHeading.addEventListener("click",()=>{
+  marvel.style.display = "none"
+  dc.style.display = "flex"
+  dcDiv.style.textDecoration = "underline red"
+  marvelDiv.style.textDecoration = "underline white"
+  dc.style.transition = "1s ease-in"
+})

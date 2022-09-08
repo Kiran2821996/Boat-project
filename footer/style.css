@@ -36,6 +36,9 @@ p{
     height: 5rem;
 }
 
+.first-para{
+  transition: 1s;
+}
 .logo-image-news:hover{
     opacity: 1.5;
     filter: none;

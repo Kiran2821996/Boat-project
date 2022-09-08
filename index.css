@@ -226,3 +226,37 @@ hr {
   color: black;
   align-self: flex-start;
 }
+.cartWrap{
+  display: flex;
+  justify-content: space-between;
+}
+.cartWrap img{
+  margin-right: 15%;
+}
+.price-cart{
+  display: flex;
+  
+  height: 10%;
+  
+}
+.price-cart i{
+  color: black;
+  padding: 5%;
+}
+.strike{
+  text-decoration: line-through;
+}
+.price-cart h4{
+  padding: 5% 10%;
+  background-color: white;
+  color: black;
+}
+.cart-button{
+  display: flex;
+  margin-top: 10%;
+ justify-content: space-between;
+}
+.cart-button i{
+  color: black;
+  padding: 5%;
+}

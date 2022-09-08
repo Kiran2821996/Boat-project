@@ -535,6 +535,7 @@ input:focus {
       justify-content: center;
       height: 83vh;
       background-color: white;
+      overflow-y: scroll;
     }
     .cart_main button{
       background-color: red;

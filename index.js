@@ -324,8 +324,6 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      // console.log(result);
-      // container.innerHTML = null;
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">

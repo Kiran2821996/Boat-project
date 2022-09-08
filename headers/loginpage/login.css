@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Roboto:ital,wght@1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,.main_container{
+    background-color: #282828;
+    
+}
+
+.container{
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+    color: white;
+}
+
+.login_heading{
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+li{
+    list-style: none;
+    font-size: 40px;
+    display: inline-block;
+    margin: 50px 5px 10px 5px;
+}
+
+.fa-google{
+    color: white;
+}
+
+.fa-facebook{
+    color: rgb(74, 74, 186);
+}
+.input_Email,.input_pswd{
+    padding: 10px;
+    position: relative;
+}
+
+.input_email,.pswd{
+    width: 400px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+    background-color: #282828;
+    color: white;
+}
+
+.forgot_pswd{
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 110px;
+}
+
+button{
+    border: none;
+    outline: none;
+    width: 400px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    padding: 12px;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+p{
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.forgot_create{
+    color: rgb(146, 146, 146);
+    font-weight: bold;
+}

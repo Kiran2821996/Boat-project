@@ -71,7 +71,6 @@ function generateBoatBlogs(){
               <h3 class="baot_blogs_imgtxt">${result[i].img_belowtxt}</h3>
             </div>
           </div>`
-
           boatBlogRow.innerHTML+=finalresult;
         }
 

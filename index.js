@@ -1164,7 +1164,6 @@ function generate() {
 
 generate();
 
-<<<<<<< HEAD
 const cart_main = document.querySelector(".cart_main");
 const empty = document.querySelector(".empty");
 main.addEventListener("click", (e) => {
@@ -1250,7 +1249,6 @@ document.querySelector(".inc").addEventListener("click",()=>{
 })
 
 
-=======
 let marvelDiv = document.querySelector(".marvel-div")
 let dcDiv = document.querySelector(".dc-div")
 
@@ -1268,4 +1266,3 @@ dcHeading.addEventListener("click",()=>{
   marvelDiv.style.textDecoration = "underline white"
   dc.style.transition = "1s ease-in"
 })
->>>>>>> ac53ca79eb4ef9df25dc364b88927eca29b7a92a

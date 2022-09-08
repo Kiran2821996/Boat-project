@@ -28,7 +28,12 @@
 .boat_blogs_img{
   width: 100%;
 }
+<<<<<<< Updated upstream
 .boat_blogs_imgDiv{
+=======
+
+.boat_blogs_imgDiv1,.boat_blogs_imgDiv2,.boat_blogs_imgDiv3{
+>>>>>>> Stashed changes
   width: 480px;
   cursor: pointer;
 }

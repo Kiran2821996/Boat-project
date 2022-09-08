@@ -9,7 +9,7 @@ let arr = [
 let btn = document.querySelectorAll(".logo-item")
 
 for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("mouseover", function (e) {
+    btn[i].addEventListener("mouseover", function () {
 
         switch (i) {
             case 0:

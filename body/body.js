@@ -11,7 +11,7 @@ exploreBlogBtn.addEventListener("click",function(){
 })
 
 // -------------------------------------------------
-const mainContainer=document.querySelectorAll(".main_container");
+const mainContainer=document.querySelectorAll(".main_container_");
 const rightBtn=document.querySelector(".arrow_right");
 const leftBtn=document.querySelector(".arrow_left");
 
@@ -157,7 +157,7 @@ function whatTheySayAboutUs(){
             </div>
             <div class="img_content">
               <p class="img_description">${output[i].content}</p>
-              <button class="shop_now_btn">SHOP NOW</button>
+              <button class="shop_now_btn shop_btn">SHOP NOW</button>
             </div>
           </div>`
 

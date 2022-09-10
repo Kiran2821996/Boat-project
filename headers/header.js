@@ -184,3 +184,9 @@ strtbtn.addEventListener("click", () => {
 
 //
 
+const btnLogin=document.querySelector(".btn_login");
+
+btnLogin.addEventListener("click",function(){
+  window.location.assign("/headers/loginpage/login.html","_self");
+})
+

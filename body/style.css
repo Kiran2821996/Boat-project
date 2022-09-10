@@ -10,11 +10,15 @@
 
 .boat_blogs_container{
   max-width: 100%;
+  margin-top: 100px;
+  background-color: rgb(227, 227, 227);
+  padding: 2px 0 2px 0;
 }
 
 .boat_blogs_heading{
   text-align: center;
   margin: 30px 0;
+  color: black;
 }
 
 .boat_blogs_row{
@@ -28,13 +32,14 @@
 .boat_blogs_img{
   width: 100%;
 }
-.boat_blogs_imgDiv{
+.boat_blogs_imgDiv1,.boat_blogs_imgDiv2,.boat_blogs_imgDiv3{
   width: 480px;
   cursor: pointer;
 }
 
 .baot_blogs_imgtxt{
-  font-size: 23px ; 
+  font-size: 23px ;
+  color: black; 
 }
 
 .baot_blogs_imgtxt:hover{
@@ -59,7 +64,7 @@
 
 .explore_blog_btn{
   width: 200px;
-  padding: 10px;
+  padding: 15px;
   font-size: 18px;
   font-weight: 600;
   border: none;
@@ -70,7 +75,7 @@
   cursor: pointer;
 }
 
-.main{
+.main_{
     max-width: 100%;
     height: 600px;
     margin: 0 auto;
@@ -78,7 +83,7 @@
     overflow: hidden;
 }
 
-.main_container {
+.main_container_ {
   background-color: #141414;
   width: 100%;
   height: 600px;
@@ -86,7 +91,7 @@
   position: absolute;
   cursor: pointer;
 }
-.container {
+.container_ {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -94,13 +99,13 @@
   height: 600px;
 }
 
-.img_div {
+.img_div_ {
   width: 400px;
   height: 500px;
   padding: 60px 0 0 0 ;
 }
 
-.img_div img {
+.img_div_ img {
   width: 100%;
   border-radius: 8px;
 }
@@ -174,6 +179,11 @@ span {
 }
 
 /* -----------------what they say about us section ----------------- */
+.what_they_say_about_us{
+  width: 100%;
+  background-color: rgb(229, 227, 227);
+  padding: 10px 0 50px 0;
+}
 
 .below_section{
   max-width: 1400px;
@@ -182,6 +192,8 @@ span {
 .heading_3{
   text-align: center;
   margin-top: 50px;
+  font-weight: 900;
+  color: black;
 }
 
 .content_row{
@@ -206,6 +218,9 @@ span {
 }
 
 .img_description{
+  max-width: 400px;
+  height: 160px;
+  margin: 0 auto;
   color: #ffffff;
   padding: 80px 0 40px 0 ;
   text-align: center;
@@ -226,6 +241,7 @@ span {
   border-radius: 5px;
   width: 200px;
   color: red;
+  background-color: white;
   font-size: 15px;
   font-weight: 600;
   padding: 10px 35px ;

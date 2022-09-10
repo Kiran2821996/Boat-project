@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: black;
+  background-color: rgb(23, 22, 22) !important;
 }
 a {
   text-decoration: none ;
@@ -530,13 +530,14 @@ input:focus {
     }
     .cart_main{
       display: flex;
-      align-items: center;
       flex-direction: column;
-      justify-content: center;
+      /* justify-content: center; */
+      padding: 10px;
       height: 83vh;
       background-color: white;
       overflow-y: scroll;
     }
+   
     .cart_main button{
       background-color: red;
       width: 45%;

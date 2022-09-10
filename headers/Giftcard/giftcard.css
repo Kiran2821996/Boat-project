@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 
-.small_giftcard_img_containers{
+.small_giftcard_img_containers1,.small_giftcard_img_containers2,.small_giftcard_img_containers3,.small_giftcard_img_containers4{
     text-align: center;
     border: 1px solid rgb(189, 189, 189);
     margin: 5px;
@@ -42,7 +42,19 @@
     border-radius: 6px;
 }
 
-.small_giftcard_img_containers:hover{
+.small_giftcard_img_containers4:hover{
+    border: 1px solid rgb(31, 31, 31);
+}
+
+.small_giftcard_img_containers3:hover{
+    border: 1px solid rgb(31, 31, 31);
+}
+
+.small_giftcard_img_containers2:hover{
+    border: 1px solid rgb(31, 31, 31);
+}
+
+.small_giftcard_img_containers1:hover{
     border: 1px solid rgb(31, 31, 31);
 }
 .gift_card_small_img{
@@ -149,4 +161,29 @@ hr{
     color: #2aa789;
     font-weight: bolder;
     padding-left: 20px;
+}
+
+.add_to_cart_btnDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.add_to_cart_btn{
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+    background-color: red;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.buy_now_btn{
+    font-size: 18px;
+    font-weight: bolder;
+    color: red;
+    border: 2px solid red;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }

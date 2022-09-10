@@ -222,15 +222,23 @@ hr {
 }
 .cartWrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  height: 30%;
+  border-bottom: 2px solid black;
 }
 .cartWrap img {
-  margin-right: 15%;
+  /* margin-right: 15%; */
+  width: 80px;
+  height: 80px;
 }
 .price-cart {
   display: flex;
-
-  height: 10%;
+  justify-content: space-between;
+ width: 100%;
+  height: 40%;
+}
+.cart-right{
+  width: 50%;
 }
 .price-cart i {
   color: black;
@@ -421,16 +429,18 @@ hr {
 }
 .carosel_flex {
   width: 100%;
-  height: 10%;
+  height: 70%;
   display: flex;
   justify-content: space-between;
   overflow-y: hidden;
+  padding-right:50px;
+  padding-left: 35px;
   /* background-color: aliceblue; */
 }
 
 .curoselBtn1 {
   position: absolute;
-  top: 120%;
+  top: 100%;
 }
 .curoselBtn2 {
   position: absolute;
@@ -446,31 +456,31 @@ hr {
 }
 .curoselBtn5 {
   position: absolute;
-  top: 520%;
+  top: 550%;
 }
 .curoselBtn6 {
   position: absolute;
-  top: 620%;
+  top:610%;
 }
 .curoselBtn7 {
   position: absolute;
-  top: 720%;
+  top: 700%;
 }
 .curoselBtn8 {
   position: absolute;
-  top: 820%;
+  top: 790%;
 }
-.curoselBtn9 {
+/* .curoselBtn9 {
   position: absolute;
   top: 920%;
 }
 .curoselBtn10 {
   position: absolute;
   top: 1020%;
-}
+} */
 .curoselBtn11 {
   position: absolute;
-  top: 1120%;
+  top: 1000%;
 }
 
 .curoselBtn1 i,

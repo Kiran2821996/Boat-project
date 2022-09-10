@@ -3365,7 +3365,6 @@ main.addEventListener("click", (e) => {
         basket.push({
           id: data[0],
           item: 1,
-          price:this.item,
         });
         console.log(basket, "pp");
       } else {

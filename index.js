@@ -15,8 +15,7 @@ const dcHeading =document.querySelector(".dc-div")
 
 
 const main = document.querySelector(".mainSection");
-const carosel_left1= document.querySelector(".carosel_left1")
-const carosel_right1= document.querySelector(".carosel_right1")
+
 const itemsOfTimer = document.querySelectorAll('.flash-sale-end-format h4');
 
 let tempDate = new Date();
@@ -55,6 +54,39 @@ function getRemainingTime() {
 }
 let countdown = setInterval(getRemainingTime, 70);
 getRemainingTime();
+
+const carosel_left1= document.querySelector(".carosel_left1")
+const carosel_right1= document.querySelector(".carosel_right1")
+
+const carosel_left2= document.querySelector(".carosel_left2")
+const carosel_right2= document.querySelector(".carosel_right2")
+
+const carosel_left3= document.querySelector(".carosel_left3")
+const carosel_right3= document.querySelector(".carosel_right3")
+
+const carosel_left4= document.querySelector(".carosel_left4")
+const carosel_right4= document.querySelector(".carosel_right4")
+
+const carosel_left5= document.querySelector(".carosel_left5")
+const carosel_right5= document.querySelector(".carosel_right5")
+
+const carosel_left6= document.querySelector(".carosel_left6")
+const carosel_right6= document.querySelector(".carosel_right6")
+
+const carosel_left7= document.querySelector(".carosel_left7")
+const carosel_right7= document.querySelector(".carosel_right7")
+
+const carosel_left8= document.querySelector(".carosel_left8")
+const carosel_right8= document.querySelector(".carosel_right8")
+
+const carosel_left9= document.querySelector(".carosel_left9")
+const carosel_right9= document.querySelector(".carosel_right9")
+
+const carosel_left10= document.querySelector(".carosel_left10")
+const carosel_right10= document.querySelector(".carosel_right10")
+
+const carosel_left11= document.querySelector(".carosel_left11")
+const carosel_right11= document.querySelector(".carosel_right11")
 
 let basket = [];
 
@@ -355,8 +387,10 @@ function generate() {
     .then((response) => response.json())
     .then((result) => {
       // console.log(result);
-      // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      // 
+      carosel_left2.style.visibility="hidden"
+        carosel_right2.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -441,6 +475,186 @@ function generate() {
           });
         }
       }
+      carosel_left2.addEventListener("click",()=>{
+        carosel_left2.style.visibility="hidden"
+        carosel_right2.style.visibility="visible"
+        daily_deals.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            daily_deals.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            daily_deals.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right2.addEventListener("click",()=>{
+        carosel_left2.style.visibility="visible"
+        carosel_right2.style.visibility="hidden"
+        daily_deals.innerHTML=null
+        for (let i = result.length-4; i <result.length ; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            daily_deals.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            daily_deals.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
 
   const data3 = { description: "Biggest_Launches" };
@@ -455,7 +669,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left3.style.visibility="hidden"
+        carosel_right3.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -540,6 +756,186 @@ function generate() {
           });
         }
       }
+      carosel_left3.addEventListener("click",()=>{
+        carosel_left3.style.visibility="hidden"
+        carosel_right3.style.visibility="visible"
+        biggest_launch.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            biggest_launch.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            biggest_launch.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right3.addEventListener("click",()=>{
+        carosel_left3.style.visibility="visible"
+        carosel_right3.style.visibility="hidden"
+        biggest_launch.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            biggest_launch.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            biggest_launch.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data4 = { description: "Smart watches" };
   fetch("http://localhost:3333/boat/Products", {
@@ -551,7 +947,9 @@ function generate() {
   })
     .then((response) => response.json())
     .then((result) => {
-      for (let i = 0; i < result.length; i++) {
+      carosel_left4.style.visibility="hidden"
+        carosel_right4.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -636,6 +1034,186 @@ function generate() {
           });
         }
       }
+      carosel_left4.addEventListener("click",()=>{
+        carosel_left4.style.visibility="hidden"
+        carosel_right4.style.visibility="visible"
+        smart_watches.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            smart_watches.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            smart_watches.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right4.addEventListener("click",()=>{
+        carosel_left4.style.visibility="visible"
+        carosel_right4.style.visibility="hidden"
+        smart_watches.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            smart_watches.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            smart_watches.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data5 = { description: "Trending_Wireless" };
   fetch("http://localhost:3333/boat/Products", {
@@ -649,7 +1227,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left5.style.visibility="hidden"
+        carosel_right5.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -734,6 +1314,186 @@ function generate() {
           });
         }
       }
+      carosel_left5.addEventListener("click",()=>{
+        carosel_left5.style.visibility="hidden"
+        carosel_right5.style.visibility="visible"
+        trending_wireless.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wireless.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wireless.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right5.addEventListener("click",()=>{
+        carosel_left5.style.visibility="visible"
+        carosel_right5.style.visibility="hidden"
+        trending_wireless.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wireless.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wireless.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data6 = { description: "Top Earbuds" };
   fetch("http://localhost:3333/boat/Products", {
@@ -747,7 +1507,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left6.style.visibility="hidden"
+        carosel_right6.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -832,6 +1594,186 @@ function generate() {
           });
         }
       }
+      carosel_left6.addEventListener("click",()=>{
+        carosel_left6.style.visibility="hidden"
+        carosel_right6.style.visibility="visible"
+        top_earbuds.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            top_earbuds.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            top_earbuds.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right6.addEventListener("click",()=>{
+        carosel_left6.style.visibility="visible"
+        carosel_right6.style.visibility="hidden"
+        top_earbuds.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            top_earbuds.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            top_earbuds.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data7 = { description: "trending_wired" };
   fetch("http://localhost:3333/boat/Products", {
@@ -845,7 +1787,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length - 1; i++) {
+      carosel_left7.style.visibility="hidden"
+        carosel_right7.style.visibility="visible"
+      for (let i = 0; i < result.length - 5; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -930,6 +1874,186 @@ function generate() {
           });
         }
       }
+      carosel_left7.addEventListener("click",()=>{
+        carosel_left7.style.visibility="hidden"
+        carosel_right7.style.visibility="visible"
+        trending_wired.innerHTML=null
+        for (let i = 0; i < result.length - 5; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wired.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wired.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right7.addEventListener("click",()=>{
+        carosel_left7.style.visibility="visible"
+        carosel_right7.style.visibility="hidden"
+        trending_wired.innerHTML=null
+        for (let i = result.length - 5; i < result.length-1; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wired.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_wired.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data8 = { description: "trending_ANC" };
   fetch("http://localhost:3333/boat/Products", {
@@ -943,7 +2067,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left8.style.visibility="hidden"
+        carosel_right8.style.visibility="visible"
+      for (let i = 0; i < result.length-2; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -1028,6 +2154,186 @@ function generate() {
           });
         }
       }
+      carosel_left8.addEventListener("click",()=>{
+        carosel_left8.style.visibility="hidden"
+        carosel_right8.style.visibility="visible"
+        trending_anc.innerHTML=null
+        for (let i = 0; i < result.length-2; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_anc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_anc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right8.addEventListener("click",()=>{
+        carosel_left8.style.visibility="visible"
+        carosel_right8.style.visibility="hidden"
+        trending_anc.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_anc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            trending_anc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data9 = { description: "boAt | Superheroes" };
   fetch("http://localhost:3333/boat/Products", {
@@ -1041,7 +2347,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left9.style.visibility="hidden"
+        carosel_right9.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
           <div class="best-seller-div">
@@ -1126,6 +2434,186 @@ function generate() {
           });
         }
       }
+      carosel_left9.addEventListener("click",()=>{
+        carosel_left9.style.visibility="hidden"
+        carosel_right9.style.visibility="visible"
+        dc.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            dc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            dc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right9.addEventListener("click",()=>{
+        carosel_left9.style.visibility="visible"
+        carosel_right9.style.visibility="hidden"
+        dc.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            dc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            dc.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
   const data10 = { description: "Marvel" };
   fetch("http://localhost:3333/boat/Products", {
@@ -1139,7 +2627,9 @@ function generate() {
     .then((result) => {
       // console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left10.style.visibility="hidden"
+        carosel_right10.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag.length > 5) {
           html = `
           <div class="main">
@@ -1225,6 +2715,188 @@ function generate() {
           });
         }
       }
+      carosel_left10.addEventListener("click",()=>{
+        carosel_left10.style.visibility="hidden"
+        carosel_right10.style.visibility="visible"
+        marvel.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag.length > 5) {
+            html = `
+            <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            marvel.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            marvel.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
+      carosel_right10.addEventListener("click",()=>{
+        carosel_left10.style.visibility="visible"
+        carosel_right10.style.visibility="hidden"
+        marvel.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag.length > 5) {
+            html = `
+            <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash red">${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale red-button" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            marvel.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+            <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back" src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+             result[i].productName
+           }">ADD TO CART</button>
+       </div></div>  `;
+            marvel.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("tata");
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          }
+        }
+      })
     });
 // ------------------------------------------------------------------------
     const data12 = { description: "video-products" };
@@ -1297,7 +2969,9 @@ function generate() {
     .then((result) => {
       console.log(result);
       // container.innerHTML = null;
-      for (let i = 0; i < result.length; i++) {
+      carosel_left11.style.visibility="hidden"
+        carosel_right11.style.visibility="visible"
+      for (let i = 0; i < result.length-4; i++) {
         if (result[i].tag == undefined) {
           html = ` <div class="main" >
         <div class="best-seller-div">
@@ -1384,6 +3058,190 @@ function generate() {
         }
        
       }
+      carosel_left11.addEventListener("click",()=>{
+        carosel_left11.style.visibility="hidden"
+        carosel_right11.style.visibility="visible"
+        home_audio.innerHTML=null
+        for (let i = 0; i < result.length-4; i++) {
+          if (result[i].tag == undefined) {
+            html = ` <div class="main" >
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+            <img class="best-seller-image-front"  src="${
+            result[i].productImages[0]
+          }  alt="">
+         <img class="best-seller-image-back" src="${
+            result[i].productImages[1]
+          }   alt="">
+     </div><div class="inside-best-seller" > <a href="./show.html"><h3 class="productname"  id="${
+      result[i]._id
+    }">${
+       result[i].productName
+     }</h3></a>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+           result[i].rating
+         } -${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${
+           result[i].originalPrice - result[i].price
+         } (${result[i].offer}%)</p>
+         <button class="button-flash-sale" id="${
+          result[i].productName
+        }"  >ADD TO CART</button>
+     </div></div>  `;
+            home_audio.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("bye");
+              if (e.target.id ==  result[i].productName) {
+                let datasTrans = result[i].productName;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            console.log(result[i].productImages[0]);
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+             <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back"  src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+            result[i].productName
+          }" >ADD TO CART</button>
+       </div></div>  `;
+            home_audio.innerHTML += html;
+            main.addEventListener("click", (e) => {
+             
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+            
+          }
+         
+        }
+      })
+      carosel_right11.addEventListener("click",()=>{
+        carosel_left11.style.visibility="visible"
+        carosel_right11.style.visibility="hidden"
+        home_audio.innerHTML=null
+        for (let i = result.length-4; i < result.length; i++) {
+          if (result[i].tag == undefined) {
+            html = ` <div class="main" >
+          <div class="best-seller-div">
+           <div class="wrapper-of-best-seller-images">
+            <img class="best-seller-image-front"  src="${
+            result[i].productImages[0]
+          }  alt="">
+         <img class="best-seller-image-back" src="${
+            result[i].productImages[1]
+          }   alt="">
+     </div><div class="inside-best-seller" > <a href="./show.html"><h3 class="productname"  id="${
+      result[i]._id
+    }">${
+       result[i].productName
+     }</h3></a>
+         <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+           result[i].rating
+         } -${result[i].noOfReviews} reviews</p>
+         <hr>
+         <div class="price-and-discount">
+             <h5 class = "current-price">${result[i].price} </h5>
+             <p class="earlier-price">₹${result[i].originalPrice}</p>
+         </div>
+         <p class="save-money">You Save: ₹ ${
+           result[i].originalPrice - result[i].price
+         } (${result[i].offer}%)</p>
+         <button class="button-flash-sale" id="${
+          result[i].productName
+        }"  >ADD TO CART</button>
+     </div></div>  `;
+            home_audio.innerHTML += html;
+            main.addEventListener("click", (e) => {
+              console.log("bye");
+              if (e.target.id ==  result[i].productName) {
+                let datasTrans = result[i].productName;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+          } else {
+            console.log(result[i].productImages[0]);
+            html = ` <div class="main">
+            <div class="best-seller-div">
+             <div class="wrapper-of-best-seller-images">
+             <div class="flash">🗲${result[i].tag}</div>
+             <img class="best-seller-image-front" src="${
+              result[i].productImages[0]
+            }  alt="">
+            <img class="best-seller-image-back"  src="${
+              result[i].productImages[1]
+            }   alt="">
+       </div><div class="inside-best-seller"> <a href="./show.html"><h3 class="productname" id="${
+        result[i]._id
+      }">${
+         result[i].productName
+       }</h3></a> 
+           <p class="icon-para"><i class="fa-solid fa-star" style="color:red;"></i>${
+             result[i].rating
+           } -${result[i].noOfReviews} reviews</p>
+           <hr>
+           <div class="price-and-discount">
+               <h5 class = "current-price">${result[i].price} </h5>
+               <p class="earlier-price">₹${result[i].originalPrice}</p>
+           </div>
+           <p class="save-money">You Save: ₹ ${
+             result[i].originalPrice - result[i].price
+           } (${result[i].offer}%)</p>
+           <button class="button-flash-sale" id="${
+            result[i].productName
+          }" >ADD TO CART</button>
+       </div></div>  `;
+            home_audio.innerHTML += html;
+            main.addEventListener("click", (e) => {
+             
+              if (e.target.id ==  result[i]._id) {
+                let datasTrans = result[i]._id;
+                console.log(datasTrans);
+                // console.log(datas);
+                sessionStorage.setItem("transferdata", JSON.stringify(datasTrans));
+              }
+            });
+            
+          }
+         
+        }
+      })
     });
   
 }

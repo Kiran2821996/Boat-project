@@ -3291,8 +3291,15 @@ main.addEventListener("click", (e) => {
         if (search == undefined) {
           basket.push({
             id: data[0],
-            item: 1,
+            item: 2,
+         total:0
           });
+          basket[0].total=basket[0].item*data[0].price
+          // basket.push({
+            // id: data[0],
+            // item: 2,
+            // total:basket[0].item*data[0].price,
+          // });
           console.log(basket,"pp");
           
         } else {

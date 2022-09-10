@@ -3375,58 +3375,56 @@ main.addEventListener("click", (e) => {
       for (let i = 0; i < basket.length; i++) {
         html = ` 
           <div class="cartWrap">
-<img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
-<div class="cart-right">
-  <h5>${data[0].productName}</h5>
-  <div class="price-cart">
-    <h4 id="updated_price">₹${data[0].price} </h4>
-    <h4 class="strike strike_price">₹${data[0].originalPrice}</h4>
+    <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+    <div class="cart-right">
+    <h5>${data[0].productName}</h5>
+    <div class="price-cart">
+    <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
+    <h4 class="strike" id="strike_${data[0]._id}">₹${data[0].originalPrice}</h4>
     <i class="fa-solid fa-trash" id="trash_${data[0]._id}" ></i>
-  </div>
-  <h3></h3>
-<div class="cart-button">
-  <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
-  <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
-  <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
-  <h5>${data[0].color[0]}</h5>
-</div>
-</div>
-
-</div>`;
-
-        cart_main.addEventListener("click", (e) => {
-          if (e.target.id == `plus_${data[0]._id}`) {
-            basket[i].item += 1;
-            basket[i].price = basket[i].price*basket[i].item;
-            console.log(basket[i].item);
-            let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-            let original_price = document.querySelector(".updated_price");
-            let strike_price = document.querySelector(".strike_price");
-            quantity.innerText = basket[i].item;
-            original_price.innerText = data[0].price * basket[i].item;
-            strike_price.innerText = data[0].originalPrice * basket[i].item;
-            console.log(quantity);
-          }
-          if (e.target.id == `minu_${data[0]._id}`) {
-            if (basket[i].item > 1) {
-              basket[i].item -= 1;
-              let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-              let original_price = document.querySelector(".updated_price");
-              let strike_price = document.querySelector(".strike_price");
-              quantity.innerText = basket[i].item;
-              original_price.innerText = data[0].price * basket[i].item;
-              strike_price.innerText = data[0].originalPrice * basket[i].item;
-            }
-          }
-         if(e.target.id== `trash_${data[0]._id}`){
-          let index=basket.indexOf(basket[i])
-           basket.splice(index,1)
-            
-         }
-
-        });
-      }
-      cart_main.innerHTML += html;
+    </div>
+    <h3></h3>
+    <div class="cart-button">
+    <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
+    <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
+    <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
+    <h5>${data[0].color[0]}</h5>
+    </div>
+    </div>
+    
+    </div>`;
+    cart_main.addEventListener("click", (e) => {
+    if (e.target.id == `plus_${data[0]._id}`) {
+    basket[i].item += 1;
+    basket[i].price = basket[i].price*basket[i].item;
+    console.log(basket,"kk");
+    let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+    let original_price = document.querySelector(`#updated_${data[0]._id}`);
+    let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+    quantity.innerText = basket[i].item;
+    original_price.innerText = data[0].price * basket[i].item;
+    strike_price.innerText = data[0].originalPrice * basket[i].item;
+    }
+    if (e.target.id == `minu_${data[0]._id}`) {
+    if (basket[i].item > 1) {
+      basket[i].item -= 1;
+      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+      let original_price = document.querySelector(`#updated_${data[0]._id}`);
+      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+      quantity.innerText = basket[i].item;
+      original_price.innerText = data[0].price * basket[i].item;
+      strike_price.innerText = data[0].originalPrice * basket[i].item;
+    }
+    }
+    if(e.target.id== `trash_${data[0]._id}`){
+    let index=basket.indexOf(basket[i])
+    basket.splice(index,1)
+    
+    }
+    
+    });
+    }
+    cart_main.innerHTML += html;
     
     });
 });

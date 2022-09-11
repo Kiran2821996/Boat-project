@@ -6,6 +6,7 @@
 .main-photo-of-show {
     width: 30rem;
     height: 30rem;
+    margin: 5rem 5rem 0 0;
 }
 .wrapper-of-two-container{
     display: flex;

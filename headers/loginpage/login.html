@@ -5,32 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/headers/header.css">
+    <link rel="stylesheet" href="/index.css">
+    <!-- <link rel="stylesheet" href="/footer/style.css"> -->
     <link rel="stylesheet" href="login.css" />
+    <script src="https://kit.fontawesome.com/d3f3344fc9.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/6d08c22a70.js"
+      crossorigin="anonymous"
+    ></script>
+
   </head>
   <body>
-
-  
+    
     <!-- ------------------------------------------- -->
-    <div class="main_container">
-      <div class="container">
-        <p class="login_heading">Login</p>
+    <div class="main_container_">
+      <div class="container_">
+        <p class="login_heading_">Login</p>
         <p>please enter your email and password:</p>
 
         <ul>
-          <li class="fb">
+          <li class="fb_">
             <a
               href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1896981220538415&kid_directed_site=0&app_id=1896981220538415&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv3.2%2Fdialog%2Foauth%3Fclient_id%3D1896981220538415%26state%3De852792bcfafa7c8cb38a9319c00ce0a%26response_type%3Dcode%26sdk%3Dphp-sdk-5.4.4%26redirect_uri%3Dhttps%253A%252F%252Fsocial-login.oxiapps.com%252Fauth%252Ffacebook%26scope%3Demail%26display%3Dpopup%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D254c13d8-1aba-4e91-8fa7-b035c410adc4%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fsocial-login.oxiapps.com%2Fauth%2Ffacebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3De852792bcfafa7c8cb38a9319c00ce0a%23_%3D_&display=popup&locale=en_GB&pl_dbl=0"
               ><i class="fa-brands fa-facebook"></i
             ></a>
           </li>
-          <li class="google">
+          <li class="google_">
             <a
               href="https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?response_type=code&redirect_uri=https%3A%2F%2Fsocial-login.oxiapps.com%2Fauth%2Fgoogle&client_id=898543883992-ut65aoh5alu6s7jlcs5hk05htbagjs9n.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&access_type=online&approval_prompt=auto&flowName=GeneralOAuthFlow"
               ><i class="fa-brands fa-google"></i
             ></a>
           </li>
         </ul>
-        <form action="/index.html">
+        <form class="login_form" action="/index.html">
           <div class="input_Email">
             <input type="email" placeholder="E-mail" class="input_email"/>
           </div>
@@ -39,15 +51,20 @@
             <a href="" class="forgot_pswd forgot_create">Forgot password</a>
           </div>
           <div class="login_btn">
-            <button class="login_btn">LOGIN</button>
+            <button class="login_btn_">LOGIN</button>
           </div>
         </form>
+        <div class="creat_acc_div">
         <p>New customer? <a href="" class="create_acc forgot_create">create an account</a></p>
       </div>
+      </div>
     </div>
-    <!-- <script src="/headers/header.js"></script> -->
+    <!-- --------------------------------------------------------  -->
+    
+    <!-- --------------------------------------------------  -->
+    <script src="/headers/header.js"></script>
     <script src="/headers/loginpage/login.js"></script>
-    <!-- <script src="/footer/script.js"></script> -->
+    <script src="/footer/script.js"></script>
     
   </body>
 </html>

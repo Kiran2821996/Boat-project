@@ -39,10 +39,10 @@
   font-size: 20px;
 }
 
-.main_container {
+._main_container_ {
   background-color: #272626;
   padding: 150px 0;
-  height: 2000px;
+  height: 5000px;
 }
 
 .investing_smartwatch {
@@ -73,7 +73,10 @@
 .content_para {
   font-size: 16px;
   margin-bottom: 40px;
+  /* color: white; */
 }
+
+
 .guide_img_div {
   width: 400px;
 }
@@ -84,7 +87,7 @@
 
 .why_smartwatch_cont {
   max-width: 1000px;
-  height: 1000px;
+  height: auto;
   background-color: black;
   margin-top: 100px;
   padding: 30px;
@@ -127,4 +130,40 @@
   color: red;
   font-size: 50px;
   font-weight: bolder;
+}
+
+.fitness_heading_R{
+  color: red;
+  max-width: 300px;
+  padding-top: 20px;
+  font-size: 23px;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.fitness_heading_L{
+  color: red;
+  max-width: 300px;
+  padding-top: 20px;
+  font-size: 23px;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.content_para_L {
+  text-align: left;
+  padding-top: 30px;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: white;
+  max-width: 300px;
+}
+
+.content_para_R {
+  text-align: left;
+  font-size: 16px;
+  padding-top: 30px;
+  margin-bottom: 40px;
+  color: white;
+  max-width: 300px;
 }

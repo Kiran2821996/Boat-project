@@ -223,7 +223,7 @@ hr {
 .cartWrap {
   display: flex;
   justify-content: space-around;
-  height: 30%;
+  height:max-content;
   border-bottom: 2px solid black;
   padding-bottom: 15%;
   margin-bottom: 10%;

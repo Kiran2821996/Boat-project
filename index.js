@@ -3272,8 +3272,49 @@ generate();
 const cart_main = document.querySelector(".cart_main");
 const empty = document.querySelector(".empty");
 main.addEventListener("click", (e) => {
+<<<<<<< Updated upstream
   if(cart_main.innerHTML==null){
     empty.style.display="block"
+=======
+
+  const cartData = { productName: `${e.target.id}` };
+
+  fetch("http://localhost:3333/boat/Products", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cartData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let search = basket.find((y) => y.id.productName == e.target.id);
+      if (search == undefined) {
+        basket.push({
+          id: data[0],
+          item: 1,
+          total:this.item,
+        });
+        // basket[0].total = basket[0].item*data[0].price
+        console.log(basket, "pp");
+      } else {
+        alert("Item Alread Added! Check Cart!");
+        basket.pull(data[0]);
+      }
+      sessionStorage.setItem("basketdata", JSON.stringify(basket));
+     
+    
+    });
+});
+
+let transferCartData = JSON.parse(sessionStorage.getItem("basketdata"));
+
+
+main.addEventListener("click",(e)=>{
+  console.log(JSON.parse(sessionStorage.getItem("basketdata")),"lll");
+  if (cart_main.innerHTML == null) {
+    empty.style.display = "block";
+>>>>>>> Stashed changes
   }
   empty.style.display="none"
     const cartData = { productName: `${e.target.id}` };
@@ -3329,6 +3370,7 @@ main.addEventListener("click", (e) => {
       let quantity = document.querySelector(`#quantity_${data[0]._id}`);
       let original_price = document.querySelector(`#updated_${data[0]._id}`);
       let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+<<<<<<< Updated upstream
       quantity.innerText = basket[i].item;
       original_price.innerText = data[0].price * basket[i].item;
       strike_price.innerText = data[0].originalPrice * basket[i].item;
@@ -3347,6 +3389,31 @@ main.addEventListener("click", (e) => {
       if(e.target.id== `trash_${data[0]._id}`){
       let index=basket.indexOf(basket[i])
       basket.splice(index,1)
+=======
+      quantity.innerText = transferCartData[i].item;
+      original_price.innerText =`₹${data[0].price * transferCartData[i].item}`;
+      strike_price.innerText =`₹${data[0].originalPrice * transferCartData[i].item}`;
+      }
+      if (e.target.id == `minu_${data[0]._id}`) {
+      if (transferCartData[i].item > 1) {
+      transferCartData[i].item -= 1;
+      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+      let original_price = document.querySelector(`#updated_${data[0]._id}`);
+      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+      quantity.innerText = transferCartData[i].item;
+      original_price.innerText = `₹${data[0].price * transferCartData[i].item}`;
+      strike_price.innerText = `₹${data[0].originalPrice * transferCartData[i].item}`;
+      }
+      }
+      if(e.target.id== `trash_${data[0]._id}`){
+      let index=transferCartData.indexOf(transferCartData[i])
+      transferCartData.splice(index,1)
+      // transferCartData = transferCartData.filter((y) => y.id.productName != e.target.id);
+      
+      let cart_wrap= document.querySelector(`#cartWrap_${data[0]._id}`)
+      cart_main.removeChild(cart_wrap)
+      }
+>>>>>>> Stashed changes
       
       }
       

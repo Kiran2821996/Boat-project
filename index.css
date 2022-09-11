@@ -225,6 +225,8 @@ hr {
   justify-content: space-around;
   height: 30%;
   border-bottom: 2px solid black;
+  padding-bottom: 15%;
+  margin-bottom: 10%;
 }
 .cartWrap img {
   /* margin-right: 15%; */

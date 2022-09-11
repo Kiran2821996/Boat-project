@@ -141,7 +141,7 @@ function generate() {
       </div></div>  `;
           best_sellers.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -183,7 +183,7 @@ function generate() {
       </div></div>  `;
           best_sellers.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -234,7 +234,7 @@ function generate() {
       </div></div>  `;
             best_sellers.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -276,7 +276,7 @@ function generate() {
       </div></div>  `;
             best_sellers.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -326,7 +326,7 @@ function generate() {
       </div></div>  `;
             best_sellers.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -368,7 +368,7 @@ function generate() {
       </div></div>  `;
             best_sellers.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -430,7 +430,7 @@ function generate() {
      </div></div>  `;
           daily_deals.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -472,7 +472,7 @@ function generate() {
      </div></div>  `;
           daily_deals.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -521,7 +521,7 @@ function generate() {
        </div></div>  `;
             daily_deals.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -563,7 +563,7 @@ function generate() {
        </div></div>  `;
             daily_deals.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -613,7 +613,7 @@ function generate() {
        </div></div>  `;
             daily_deals.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -655,7 +655,7 @@ function generate() {
        </div></div>  `;
             daily_deals.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -717,7 +717,7 @@ function generate() {
      </div></div>  `;
           biggest_launch.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -759,7 +759,7 @@ function generate() {
      </div></div>  `;
           biggest_launch.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -808,7 +808,7 @@ function generate() {
        </div></div>  `;
             biggest_launch.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -850,7 +850,7 @@ function generate() {
        </div></div>  `;
             biggest_launch.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -900,7 +900,7 @@ function generate() {
        </div></div>  `;
             biggest_launch.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -942,7 +942,7 @@ function generate() {
        </div></div>  `;
             biggest_launch.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1001,7 +1001,7 @@ function generate() {
      </div></div>  `;
           smart_watches.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1043,7 +1043,7 @@ function generate() {
      </div></div>  `;
           smart_watches.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1092,7 +1092,7 @@ function generate() {
        </div></div>  `;
             smart_watches.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1134,7 +1134,7 @@ function generate() {
        </div></div>  `;
             smart_watches.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1184,7 +1184,7 @@ function generate() {
        </div></div>  `;
             smart_watches.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1226,7 +1226,7 @@ function generate() {
        </div></div>  `;
             smart_watches.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1287,7 +1287,7 @@ function generate() {
      </div></div>  `;
           trending_wireless.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1329,7 +1329,7 @@ function generate() {
      </div></div>  `;
           trending_wireless.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1378,7 +1378,7 @@ function generate() {
        </div></div>  `;
             trending_wireless.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1420,7 +1420,7 @@ function generate() {
        </div></div>  `;
             trending_wireless.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1470,7 +1470,7 @@ function generate() {
        </div></div>  `;
             trending_wireless.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1512,7 +1512,7 @@ function generate() {
        </div></div>  `;
             trending_wireless.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1573,7 +1573,7 @@ function generate() {
      </div></div>  `;
           top_earbuds.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1615,7 +1615,7 @@ function generate() {
      </div></div>  `;
           top_earbuds.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1664,7 +1664,7 @@ function generate() {
        </div></div>  `;
             top_earbuds.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1706,7 +1706,7 @@ function generate() {
        </div></div>  `;
             top_earbuds.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1756,7 +1756,7 @@ function generate() {
        </div></div>  `;
             top_earbuds.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1798,7 +1798,7 @@ function generate() {
        </div></div>  `;
             top_earbuds.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1859,7 +1859,7 @@ function generate() {
      </div></div>  `;
           trending_wired.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1901,7 +1901,7 @@ function generate() {
      </div></div>  `;
           trending_wired.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -1950,7 +1950,7 @@ function generate() {
        </div></div>  `;
             trending_wired.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -1992,7 +1992,7 @@ function generate() {
        </div></div>  `;
             trending_wired.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2042,7 +2042,7 @@ function generate() {
        </div></div>  `;
             trending_wired.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2084,7 +2084,7 @@ function generate() {
        </div></div>  `;
             trending_wired.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2145,7 +2145,7 @@ function generate() {
      </div></div>  `;
           trending_anc.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2187,7 +2187,7 @@ function generate() {
      </div></div>  `;
           trending_anc.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2236,7 +2236,7 @@ function generate() {
        </div></div>  `;
             trending_anc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2278,7 +2278,7 @@ function generate() {
        </div></div>  `;
             trending_anc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2328,7 +2328,7 @@ function generate() {
        </div></div>  `;
             trending_anc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2370,7 +2370,7 @@ function generate() {
        </div></div>  `;
             trending_anc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2431,7 +2431,7 @@ function generate() {
      </div></div>  `;
           dc.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2473,7 +2473,7 @@ function generate() {
      </div></div>  `;
           dc.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2522,7 +2522,7 @@ function generate() {
        </div></div>  `;
             dc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2564,7 +2564,7 @@ function generate() {
        </div></div>  `;
             dc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2614,7 +2614,7 @@ function generate() {
        </div></div>  `;
             dc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2656,7 +2656,7 @@ function generate() {
        </div></div>  `;
             dc.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2718,7 +2718,7 @@ function generate() {
      </div></div>  `;
           marvel.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2760,7 +2760,7 @@ function generate() {
      </div></div>  `;
           marvel.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i]._id) {
               let datasTrans = result[i]._id;
               console.log(datasTrans);
@@ -2810,7 +2810,7 @@ function generate() {
        </div></div>  `;
             marvel.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2852,7 +2852,7 @@ function generate() {
        </div></div>  `;
             marvel.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2903,7 +2903,7 @@ function generate() {
        </div></div>  `;
             marvel.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -2945,7 +2945,7 @@ function generate() {
        </div></div>  `;
             marvel.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i]._id) {
                 let datasTrans = result[i]._id;
                 console.log(datasTrans);
@@ -3079,7 +3079,7 @@ function generate() {
    </div></div>  `;
           home_audio.innerHTML += html;
           main.addEventListener("click", (e) => {
-            console.log("");
+            ;
             if (e.target.id == result[i].productName) {
               let datasTrans = result[i].productName;
               console.log(datasTrans);
@@ -3169,7 +3169,7 @@ function generate() {
      </div></div>  `;
             home_audio.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i].productName) {
                 let datasTrans = result[i].productName;
                 console.log(datasTrans);
@@ -3260,7 +3260,7 @@ function generate() {
      </div></div>  `;
             home_audio.innerHTML += html;
             main.addEventListener("click", (e) => {
-              console.log("");
+              ;
               if (e.target.id == result[i].productName) {
                 let datasTrans = result[i].productName;
                 console.log(datasTrans);
@@ -3345,10 +3345,7 @@ const cart_main = document.querySelector(".cart_main");
 const shippingTotal=document.querySelector(".shippingTotal")
 const empty = document.querySelector(".empty");
 main.addEventListener("click", (e) => {
-  if (cart_main.innerHTML == null) {
-    empty.style.display = "block";
-  }
-  empty.style.display = "none";
+
   const cartData = { productName: `${e.target.id}` };
 
   fetch("http://localhost:3333/boat/Products", {
@@ -3365,66 +3362,107 @@ main.addEventListener("click", (e) => {
         basket.push({
           id: data[0],
           item: 1,
+          total:0,
         });
+        basket[0].total = basket[0].item*data[0].price
         console.log(basket, "pp");
       } else {
         alert("Item Alread Added! Check Cart!");
         basket.pull(data[0]);
       }
-      localStorage.setItem("basketdata", JSON.stringify(basket));
-      for (let i = 0; i < basket.length; i++) {
-        html = ` 
-          <div class="cartWrap">
-    <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
-    <div class="cart-right">
-    <h5>${data[0].productName}</h5>
-    <div class="price-cart">
-    <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
-    <h4 class="strike" id="strike_${data[0]._id}">₹${data[0].originalPrice}</h4>
-    <i class="fa-solid fa-trash" id="trash_${data[0]._id}" ></i>
-    </div>
-    <h3></h3>
-    <div class="cart-button">
-    <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
-    <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
-    <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
-    <h5>${data[0].color[0]}</h5>
-    </div>
-    </div>
-    
-    </div>`;
-    cart_main.addEventListener("click", (e) => {
-    if (e.target.id == `plus_${data[0]._id}`) {
-    basket[i].item += 1;
-    basket[i].price = basket[i].price*basket[i].item;
-    console.log(basket,"kk");
-    let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-    let original_price = document.querySelector(`#updated_${data[0]._id}`);
-    let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-    quantity.innerText = basket[i].item;
-    original_price.innerText = data[0].price * basket[i].item;
-    strike_price.innerText = data[0].originalPrice * basket[i].item;
-    }
-    if (e.target.id == `minu_${data[0]._id}`) {
-    if (basket[i].item > 1) {
-      basket[i].item -= 1;
-      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-      let original_price = document.querySelector(`#updated_${data[0]._id}`);
-      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-      quantity.innerText = basket[i].item;
-      original_price.innerText = data[0].price * basket[i].item;
-      strike_price.innerText = data[0].originalPrice * basket[i].item;
-    }
-    }
-    if(e.target.id== `trash_${data[0]._id}`){
-    let index=basket.indexOf(basket[i])
-    basket.splice(index,1)
-    
-    }
-    
-    });
-    }
-    cart_main.innerHTML += html;
+      sessionStorage.setItem("basketdata", JSON.stringify(basket));
+     
     
     });
 });
+
+let transferCartData = JSON.parse(sessionStorage.getItem("basketdata"));
+
+
+main.addEventListener("click",(e)=>{
+  console.log(JSON.parse(sessionStorage.getItem("basketdata")),"lll");
+  if (cart_main.innerHTML == null) {
+    empty.style.display = "block";
+  }
+  empty.style.display = "none";
+  const cartData = { productName: `${e.target.id}` };
+
+  fetch("http://localhost:3333/boat/Products", {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(cartData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data,"jjjjjjjjjjjj");
+      
+      for (let i = 0; i < transferCartData.length; i++) {
+        
+        html = ` 
+          <div class="cartWrap" id="cartWrap_${data[0]._id}">
+      <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+      <div class="cart-right">
+      <h5>${data[0].productName}</h5>
+      <div class="price-cart">
+      <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
+      <h4 class="strike" id="strike_${data[0]._id}">₹${data[0].originalPrice}</h4>
+      <i class="fa-solid fa-trash" id="trash_${data[0]._id}" ></i>
+      </div>
+      <h3></h3>
+      <div class="cart-button">
+      <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
+      <span class="item_quantity"  id="quantity_${data[0]._id}">${transferCartData[i].item}</span>
+      <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
+      <h5>${data[0].color[0]}</h5>
+      </div>
+      </div>
+      
+      </div>`;
+      cart_main.addEventListener("click", (e) => {
+      if (e.target.id == `plus_${data[0]._id}`) {
+      transferCartData[i].item += 1;
+      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+      let original_price = document.querySelector(`#updated_${data[0]._id}`);
+      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+      quantity.innerText = transferCartData[i].item;
+      original_price.innerText = data[0].price * transferCartData[i].item;
+      strike_price.innerText = data[0].originalPrice * transferCartData[i].item;
+      }
+      if (e.target.id == `minu_${data[0]._id}`) {
+      if (transferCartData[i].item > 1) {
+      transferCartData[i].item -= 1;
+      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+      let original_price = document.querySelector(`#updated_${data[0]._id}`);
+      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+      quantity.innerText = transferCartData[i].item;
+      original_price.innerText = data[0].price * transferCartData[i].item;
+      strike_price.innerText = data[0].originalPrice * transferCartData[i].item;
+      }
+      }
+      if(e.target.id== `trash_${data[0]._id}`){
+      let index=transferCartData.indexOf(transferCartData[i])
+      transferCartData.splice(index,1)
+      let cart_wrap= document.querySelector(`#cartWrap_${data[0]._id}`)
+      cart_wrap.style.display="none"
+      }
+      
+      
+      });
+      
+      }
+      cart_main.innerHTML += html;
+      
+     
+    
+    });
+
+   
+})
+let basketUpdate = transferCartData.reduce(
+  (previousValue, currentValue) => previousValue + currentValue.item,
+  0,
+);
+
+console.log(basketUpdate,"mm");

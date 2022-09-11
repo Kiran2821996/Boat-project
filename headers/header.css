@@ -503,6 +503,11 @@ input:focus {
       box-shadow: 320px 0px 0px 1100px rgba(10, 10, 10, 0.238);
       background-color: #000000;
     }
+    .empty{
+      height: 50vh;
+      text-align: center;
+      padding-top: 120px;
+    }
     .cart_top{
       display: flex;
       align-items: center;
@@ -533,9 +538,19 @@ input:focus {
       flex-direction: column;
       /* justify-content: center; */
       padding: 10px;
-      height: 83vh;
+      height: 63vh;
       background-color: white;
       overflow-y: scroll;
+    }
+    .cart_bottom{
+      height:27vh ;
+      background-color: white;
+      border-top: 5px solid black;
+    }
+    .cart_bottom1,.cart_bottom2{
+      display: flex;
+      justify-content: space-around;
+      
     }
    
     .cart_main button{

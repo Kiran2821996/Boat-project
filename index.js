@@ -3362,7 +3362,9 @@ main.addEventListener("click", (e) => {
         basket.push({
           id: data[0],
           item: 1,
+          total:0,
         });
+        basket[0].total = basket[0].item*data[0].price
         console.log(basket, "pp");
       } else {
         alert("Item Alread Added! Check Cart!");
@@ -3411,7 +3413,7 @@ main.addEventListener("click",(e)=>{
       <h3></h3>
       <div class="cart-button">
       <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
-      <span  id="quantity_${data[0]._id}">${transferCartData[i].item}</span>
+      <span class="item_quantity"  id="quantity_${data[0]._id}">${transferCartData[i].item}</span>
       <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
       <h5>${data[0].color[0]}</h5>
       </div>

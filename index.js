@@ -3272,10 +3272,6 @@ generate();
 const cart_main = document.querySelector(".cart_main");
 const empty = document.querySelector(".empty");
 main.addEventListener("click", (e) => {
-<<<<<<< Updated upstream
-  if(cart_main.innerHTML==null){
-    empty.style.display="block"
-=======
 
   const cartData = { productName: `${e.target.id}` };
 
@@ -3311,10 +3307,9 @@ let transferCartData = JSON.parse(sessionStorage.getItem("basketdata"));
 
 
 main.addEventListener("click",(e)=>{
-  console.log(JSON.parse(sessionStorage.getItem("basketdata")),"lll");
+  console.log(JSON.parse(sessionStorage.getItem("transferCartDatadata")),"lll");
   if (cart_main.innerHTML == null) {
     empty.style.display = "block";
->>>>>>> Stashed changes
   }
   empty.style.display="none"
     const cartData = { productName: `${e.target.id}` };
@@ -3328,20 +3323,7 @@ main.addEventListener("click",(e)=>{
     })
       .then((response) => response.json())
       .then((data) => {
-        let search = basket.find((y) => y.id.productName == e.target.id);
-        if (search == undefined) {
-          basket.push({
-            id: data[0],
-            item: 1,
-          });
-          console.log(basket,"pp");
-          
-        } else {
-          alert("Item Alread Added! Check Cart!");
-          basket.pull(data[0]);
-        }
-        localStorage.setItem("basketdata", JSON.stringify(basket));
-        for (let i = 0; i < basket.length; i++) {
+        for (let i = 0; i < transferCartData.length; i++) {
           html = ` 
             <div class="cartWrap">
       <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
@@ -3355,7 +3337,7 @@ main.addEventListener("click",(e)=>{
       <h3></h3>
       <div class="cart-button">
       <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
-      <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
+      <span  id="quantity_${data[0]._id}">${transferCartData[i].item}</span>
       <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
       <h5>${data[0].color[0]}</h5>
       </div>
@@ -3364,66 +3346,40 @@ main.addEventListener("click",(e)=>{
       </div>`;
       cart_main.addEventListener("click", (e) => {
       if (e.target.id == `plus_${data[0]._id}`) {
-      basket[i].item += 1;
-      basket[i].price = basket[i].price*basket[i].item;
-      console.log(basket,"kk");
+      transferCartData[i].item += 1;
+      transferCartData[i].price = transferCartData[i].price*transferCartData[i].item;
+      console.log(transferCartData,"kk");
       let quantity = document.querySelector(`#quantity_${data[0]._id}`);
       let original_price = document.querySelector(`#updated_${data[0]._id}`);
       let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-<<<<<<< Updated upstream
-      quantity.innerText = basket[i].item;
-      original_price.innerText = data[0].price * basket[i].item;
-      strike_price.innerText = data[0].originalPrice * basket[i].item;
-      }
-      if (e.target.id == `minu_${data[0]._id}`) {
-      if (basket[i].item > 1) {
-        basket[i].item -= 1;
-        let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-        let original_price = document.querySelector(`#updated_${data[0]._id}`);
-        let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-        quantity.innerText = basket[i].item;
-        original_price.innerText = data[0].price * basket[i].item;
-        strike_price.innerText = data[0].originalPrice * basket[i].item;
-      }
-      }
-      if(e.target.id== `trash_${data[0]._id}`){
-      let index=basket.indexOf(basket[i])
-      basket.splice(index,1)
-=======
       quantity.innerText = transferCartData[i].item;
-      original_price.innerText =`₹${data[0].price * transferCartData[i].item}`;
-      strike_price.innerText =`₹${data[0].originalPrice * transferCartData[i].item}`;
+      original_price.innerText = data[0].price * transferCartData[i].item;
+      strike_price.innerText = data[0].originalPrice * transferCartData[i].item;
       }
       if (e.target.id == `minu_${data[0]._id}`) {
       if (transferCartData[i].item > 1) {
-      transferCartData[i].item -= 1;
-      let quantity = document.querySelector(`#quantity_${data[0]._id}`);
-      let original_price = document.querySelector(`#updated_${data[0]._id}`);
-      let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-      quantity.innerText = transferCartData[i].item;
-      original_price.innerText = `₹${data[0].price * transferCartData[i].item}`;
-      strike_price.innerText = `₹${data[0].originalPrice * transferCartData[i].item}`;
+        transferCartData[i].item -= 1;
+        let quantity = document.querySelector(`#quantity_${data[0]._id}`);
+        let original_price = document.querySelector(`#updated_${data[0]._id}`);
+        let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+        quantity.innerText = transferCartData[i].item;
+        original_price.innerText = data[0].price * transferCartData[i].item;
+        strike_price.innerText = data[0].originalPrice * transferCartData[i].item;
       }
       }
       if(e.target.id== `trash_${data[0]._id}`){
       let index=transferCartData.indexOf(transferCartData[i])
       transferCartData.splice(index,1)
-      // transferCartData = transferCartData.filter((y) => y.id.productName != e.target.id);
-      
-      let cart_wrap= document.querySelector(`#cartWrap_${data[0]._id}`)
-      cart_main.removeChild(cart_wrap)
-      }
->>>>>>> Stashed changes
       
       }
       
       });
       }
       cart_main.innerHTML += html;
-      
-            
-      });
-
+       
 });
+      
+ });
+
 
 

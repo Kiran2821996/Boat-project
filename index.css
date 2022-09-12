@@ -1,9 +1,29 @@
+html{
+  scroll-behavior: smooth;
+}
 .productname {
   white-space: nowrap;
   overflow: hidden;
   color: black;
   text-overflow: ellipsis;
   max-width: 200px;
+}
+
+
+#scroll_to_top_btn {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  z-index: 99;
+  font-size: 23px;
+  border: 1px solid gray;
+  outline: none;
+  background-color: white;
+  color: red;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 4px;
 }
 
 .daily_deals,

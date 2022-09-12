@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="search" type="text" placeholder="boat">
+    <button>search</button>
+    <div style="color:black ;background-color: aliceblue; height: 600px; width: 300px;" class="div1"></div>
+</body>
+
+<script>
+    let search = document.querySelector(".search")
+    let button = document.querySelector("button")
+    let div = document.querySelector(".div1")
+    button.addEventListener("click", () => {
+        
+    fetch("http://localhost:3333/boat/Products/productName", {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data)
+                // for (let i = 0; i < data.length; i++) {
+                //     // console.log(data[i].productNAme.has('boAt'))
+                //    if(Object.values(data[i]).includes('Xtend Talk | Premium Design Smartwatch with Built-in Alexa, Bluetooth Calling, 1.69’ HD Display, Dialpad, 60+ Sports Modes, Heart Rate, SpO2 Monitoring'))
+                //     div.innerHTML+= `${data[i].productName} <img src = "${data[i].productImages[0]}>"`
+                //     else{
+                //         console.log("not present")
+                //     }
+                // }
+             })
+        })
+   
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+// const data2 = { productName: search.value };
+//      fetch("http://localhost:3333/boat/Products", {
+//     method: "POST", // or 'PUT'
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data2),
+//   })
+//     .then((response) => response.json())
+//     .then((result) => {
+//       console.log(result);
+
+//     }
+//     )}
+//     )
+ -->
+
+
+
+
+
+
+
+
+
+
+<!-- 
+//     fetch("http://localhost:3333/boat/Products", {
+    //         method: "POST", // or 'PUT'
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //     })
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             // console.log(data[0].productName)
+    //             for (let i = 0; i < data.length; i++) {
+    //                 // if (data[i].productName.includes("boat")) {
+    //                     console.log(data[i].productName)
+    //                 // }else if(!data[i].productName.includes("boat")){
+    //                     // console.log("no")
+    //                 // }
+    //             }
+
+
+    //         })
+
+    // }) -->

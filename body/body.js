@@ -129,7 +129,8 @@ groomingKit();
 const ContentRow = document.querySelector(".content_row");
 
 function whatTheySayAboutUs() {
-  const data = { description: "What They Say About Us" };
+
+const data = { description: "What They Say About Us" };
   fetch("http://localhost:3333/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
@@ -138,21 +139,35 @@ function whatTheySayAboutUs() {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((output) => {
-      console.log(output);
-      for (let i = 0; i < output.length; i++) {
+    .then((shopOutput) => {
+      console.log(shopOutput);
+      for (let i = 0; i < shopOutput.length; i++) {
         let finalresult = `<div class="img_box">
             <div class="img_divs">
-              <img src=${output[i].productImages[0]} class="device_img" alt="" />
+              <img src=${shopOutput[i].productImages[0]} class="device_img" alt="" />
             </div>
             <div class="img_content">
-              <p class="img_description">${output[i].content}</p>
-              <button class="shop_now_btn shop_btn">SHOP NOW</button>
+              <p class="img_description">${shopOutput[i].content}</p>
+              <button class="shop_now_btn shop_btn" id="${shopOutput[i]._id}">SHOP NOW</button>
             </div>
           </div>`;
 
         ContentRow.innerHTML += finalresult;
+
+        let shopNowBtn=document.querySelector(".shop_now_btn");
+       
       }
+      ContentRow.addEventListener("click",(e)=>{
+        if(e.target.id==shopOutput[0]._id){
+         window.location.assign("#best_sound_home_audio","_self")
+        }
+        if(e.target.id==shopOutput[1]._id){
+          window.location.assign("#trending_wireless_earphones")
+        }
+        if(e.target.id==shopOutput[2]._id){
+          window.location.assign("#top_earbuds_amazing_product")
+        }
+      })
     });
 }
 

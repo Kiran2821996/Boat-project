@@ -42,7 +42,7 @@
 ._main_container_ {
   background-color: #272626;
   padding: 150px 0;
-  height: 5000px;
+  height: 6100px;
 }
 
 .investing_smartwatch {
@@ -166,4 +166,33 @@
   margin-bottom: 40px;
   color: white;
   max-width: 300px;
+}
+
+.right_content{
+  max-width: 1000px;
+  text-align: right;
+  padding-left: 450px;
+}
+
+.left_content{
+  position: relative;
+}
+
+.smart_watch_side_img{
+  width: 400px;
+  position: absolute;
+  bottom: 100px;
+}
+
+.sporty_side_content{
+  max-width: 1000px;
+  margin: 50px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right_content_sport{
+  max-width: 400px;
+ margin: 160px 50px 0 0;
 }

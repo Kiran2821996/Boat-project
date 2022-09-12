@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="searchbox.css">
     <title>Document</title>
 </head>
+
 <body>
-    <input class="search" type="text" placeholder="boat">
+    <input class="search" type="text">
     <button>search</button>
-    <div style="color:black ;background-color: aliceblue; height: 600px; width: 300px;" class="div1"></div>
+    <div class="div1-search"></div>
 </body>
+</html>
 
 <script>
     let search = document.querySelector(".search")
-    let button = document.querySelector("button")
-    let div = document.querySelector(".div1")
-    button.addEventListener("click", () => {
-        
-    fetch("http://localhost:3333/boat/Products/productName", {
+    let buttonSearch = document.querySelector("button")
+    let div = document.querySelector(".div1-search")
+    buttonSearch.addEventListener("click", () => {
+        div.innerHTML =""
+        fetch("http://localhost:3333/boat/Products", {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",
@@ -27,80 +30,37 @@
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
-                // for (let i = 0; i < data.length; i++) {
-                //     // console.log(data[i].productNAme.has('boAt'))
-                //    if(Object.values(data[i]).includes('Xtend Talk | Premium Design Smartwatch with Built-in Alexa, Bluetooth Calling, 1.69’ HD Display, Dialpad, 60+ Sports Modes, Heart Rate, SpO2 Monitoring'))
-                //     div.innerHTML+= `${data[i].productName} <img src = "${data[i].productImages[0]}>"`
-                //     else{
-                //         console.log("not present")
-                //     }
-                // }
-             })
-        })
-   
-
+                // console.log(data)
+                for (let i = 0; i < data.length; i++) {
+                    let datas = data.filter((result) => {
+                        if (result.productName.includes(search.value)) {
+                            // console.log(onedata)
+                         let html =`
+                            <div class="main-searchbox">
+           <div class="best-seller-div-search">
+            <div class="wrapper-of-best-seller-images-search">
+            
+            <img class="best-seller-image-front-search" src="${
+             result.productImages[0]
+           }  alt="">
+          
+      </div><div class="inside-best-seller-search"> <h3 class="productname-search" >${result.productName}</h3></a> 
+          <p class="icon-para-search"><i class="fa-solid fa-star" style="color:red;"></i>
+            ${result.rating} -${result.noOfReviews} reviews</p>
+          <div class="price-and-discount-search">
+              <h5 class = "current-price-search">${result.price} </h5>
+              <p class="earlier-price-search">₹${result.originalPrice}</p>
+          </div>
+          <p class="save-money-search">You Save: ₹ ${result.originalPrice - result.price} (${result.offer}%)</p>
+          <button class="button-flash-sale-search" id="${result.productName }">ADD TO CART</button>
+      </div>
+      </div>
+      </div>   `
+      div.innerHTML +=html
+                        }
+                    })
+                    
+                }
+            })
+    })
 </script>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-// const data2 = { productName: search.value };
-//      fetch("http://localhost:3333/boat/Products", {
-//     method: "POST", // or 'PUT'
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data2),
-//   })
-//     .then((response) => response.json())
-//     .then((result) => {
-//       console.log(result);
-
-//     }
-//     )}
-//     )
- -->
-
-
-
-
-
-
-
-
-
-
-<!-- 
-//     fetch("http://localhost:3333/boat/Products", {
-    //         method: "POST", // or 'PUT'
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //     })
-    //         .then((response) => response.json())
-    //         .then((data) => {
-    //             // console.log(data[0].productName)
-    //             for (let i = 0; i < data.length; i++) {
-    //                 // if (data[i].productName.includes("boat")) {
-    //                     console.log(data[i].productName)
-    //                 // }else if(!data[i].productName.includes("boat")){
-    //                     // console.log("no")
-    //                 // }
-    //             }
-
-
-    //         })
-
-    // }) -->

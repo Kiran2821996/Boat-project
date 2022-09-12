@@ -109,7 +109,7 @@ function generate() {
 
       carosel_left1.style.visibility = "hidden";
       carosel_right1.style.visibility = "visible";
-      for (let i = 0; i < result.length - 4; i++) {
+      for (let i = 0; i < result.length-4 ; i++) {
         if (result[i].tag.length > 5) {
           html = ` <div class="main">
            <div class="best-seller-div">
@@ -3278,6 +3278,7 @@ dcDiv.addEventListener("click", () => {
 
 generate();
 
+// const cart_items= document.querySelector(".cart_items")
 const cart_main = document.querySelector(".cart_main");
 const empty = document.querySelector(".empty");
 main.addEventListener("click", (e) => {
@@ -3343,6 +3344,7 @@ main.addEventListener("click", (e) => {
             (previousValue, currentValue) => previousValue + currentValue.total,
             0
           );
+          let checkout_subtotal= document.querySelector(".checkout_subtotal")
           let subtotal = document.querySelector(".subtotal");
           let quatity = document.querySelector(`#quantity_${data[0]._id}`);
           let updatecart = document.querySelector(".updateCart");
@@ -3354,7 +3356,7 @@ main.addEventListener("click", (e) => {
 
           if (e.target.id == `minu_${data[0]._id}`) {
             basket[i].item -= 1;
-            quatity.innerHTML = basket[i].item;
+            quatity.innerText = basket[i].item;
             console.log(basket, "minus");
             updatecart.innerText = sum;
             original_price.innerText = `₹${data[0].price * basket[i].item}`;
@@ -3363,10 +3365,12 @@ main.addEventListener("click", (e) => {
             }`;
             basket[i].total = data[0].price * basket[i].item;
             subtotal.innerText = `₹ ${total}`;
+            checkout_subtotal.innerText=`₹ ${total}`
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
           if (e.target.id == `plus_${data[0]._id}`) {
             basket[i].item += 1;
-            quatity.innerHTML = basket[i].item;
+            quatity.innerText= basket[i].item;
             console.log(basket, "plus");
             updatecart.innerText = sum;
             original_price.innerText = `₹${data[0].price * basket[i].item}`;
@@ -3375,16 +3379,36 @@ main.addEventListener("click", (e) => {
             }`;
             basket[i].total = data[0].price * basket[i].item;
             subtotal.innerText = `₹ ${total}`;
+            checkout_subtotal.innerText=`₹ ${total}`
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
           if (e.target.id == `trash_${data[0]._id}`) {
             basket.splice(i, 1);
             console.log(basket);
             cart_wrap.style.display = "none";
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
         });
-        sessionStorage.setItem("cartData",basket)
+       
       }
       cart_main.innerHTML += html;
+
+      // for (let i = 0; i < basket.length; i++) {
+      //   html2 = ` 
+      //               <div class="cartWrap" id="cartWrap_${data[0]._id}">
+      //         <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+      //         <div class="cart-right">
+      //         <h5>${data[0].productName}</h5>
+      //         <div class="price-cart">
+      //         Item <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
+      //         <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
+      //         </div>
+      //         </div>
+              
+      //         </div>`;
+
+      // }
+      // cart_items.innerHTML+=html2
     });
 });
 

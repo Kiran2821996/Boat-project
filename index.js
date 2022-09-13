@@ -2972,6 +2972,7 @@ function generate() {
         }
       }
     });
+ 
 
   // -----------------------------------------------------------------------------
   const data11 = { description: "Home Audio" };
@@ -3278,9 +3279,95 @@ dcDiv.addEventListener("click", () => {
 
 generate();
 
-// const cart_items= document.querySelector(".cart_items")
+
+const paybtn = document.querySelector(".payment_Checkout_bottom_btn")
+const paybtn2 = document.querySelector(".payment_Checkout_bottom_paybtn")
+const paymid1 =document.querySelector(".payment_Checkout_middle1")
+const paymid2 =document.querySelector(".payment_Checkout_middle2")
+const payment_Checkout_top2_1 = document.querySelector(".payment_Checkout_top2_1 ")
+const payment_Checkout_top2_2 = document.querySelector(".payment_Checkout_top2_2")
+
+const payout1= document.querySelector(".payout")
+
+
+
+
+paybtn.addEventListener("click",()=>{
+    if(paymid1.style.display="block"){
+        paymid1.style.display="none"
+            paymid2.style.display="block"
+    }
+    if(payment_Checkout_top2_1.style.display="flex"){
+        payment_Checkout_top2_1.style.display="none";
+        payment_Checkout_top2_2.style.display="flex"
+    }
+   if(paybtn.style.display="block"){
+    paybtn2.style.display="block";
+    paybtn.style.display="none";
+   }
+ 
+})
+
+const addressy=document.querySelector(".addressy")
+const summaryy=document.querySelector(".summaryy")
+const closyy = document.querySelector(".closyy")
+const payment_Checkout=document.querySelector(".payment_Checkout")
+const aside=document.querySelector("aside")
+
+paybtn2.addEventListener("click",()=>{
+  payout1.style.display="block"
+  payment_Checkout.style.filter="blur(8px)"
+  aside.style.filter="blur(8px)"
+})
+
+
+addressy.addEventListener("click",()=>{
+    if(paymid1.style.display="block"){
+        paymid1.style.display="none"
+            paymid2.style.display="block"
+    }
+    if(payment_Checkout_top2_1.style.display="flex"){
+        payment_Checkout_top2_1.style.display="none";
+        payment_Checkout_top2_2.style.display="flex"
+    }
+    if(paybtn.style.display="block"){
+        paybtn2.style.display="block";
+        paybtn.style.display="none";
+       }
+ 
+})
+summaryy.addEventListener("click",()=>{
+    if(paymid1.style.display="none"){
+        paymid1.style.display="block"
+            paymid2.style.display="none"
+    }
+    if(payment_Checkout_top2_1.style.display="none"){
+        payment_Checkout_top2_1.style.display="flex";
+        payment_Checkout_top2_2.style.display="none"
+    }
+    if(paybtn.style.display="none"){
+        paybtn2.style.display="none";
+        paybtn.style.display="block";
+       }
+    
+})
+
+closyy.addEventListener("click",()=>{
+    payment_Checkout.style.display="none"
+})
+
+const payout = document.querySelector(".payment_Checkout")
+const checkyy = document.querySelector(".checkyy")
+
+checkyy.addEventListener("click",()=>{
+    payout.style.display="block"
+})
+
+const cart_items= document.querySelector(".cart_items")
 const cart_main = document.querySelector(".cart_main");
 const empty = document.querySelector(".empty");
+let total=0;
+let sum=0;
 main.addEventListener("click", (e) => {
   const cartData = { productName: `${e.target.id}` };
 
@@ -3291,16 +3378,18 @@ main.addEventListener("click", (e) => {
     },
     body: JSON.stringify(cartData),
   })
-    .then((response) => response.json())
+    .then((response) => response.json())  
     .then((data) => {
       let search = basket.find((y) => y.id.productName == e.target.id);
+      const price = data[0].price
+      // const {price=""} =data
       if (search == undefined) {
         basket.push({
           id: data[0],
           item: 1,
-          total: 0,
+          total: price,
         });
-        sessionStorage.setItem("basketArray",JSON.stringify(basket))
+        sessionStorage.setItem("cartData",JSON.stringify(basket))
         // basket[0].total = basket[0].item*data[0].price
         console.log(basket, "pp");
       } else {
@@ -3308,94 +3397,144 @@ main.addEventListener("click", (e) => {
         basket.pull(data[0]);
       }
 
-      // if (cart_main.innerHTML == null) {
-      //   empty.style.display = "block";
-      // }
-      // empty.style.display = "none";
+      if (cart_main.innerHTML == null) {
+        empty.style.display = "block";
+      }
+      empty.style.display = "none";
 
-      // for (let i = 0; i < basket.length; i++) {
-      //   html = ` 
-              //       <div class="cartWrap" id="cartWrap_${data[0]._id}">
-              // <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%"/>
-              // <div class="cart-right">
-              // <h5>${data[0].productName}</h5>
-              // <div class="price-cart">
-              // <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
-              // <h4 class="strike" id="strike_${data[0]._id}">₹${data[0].originalPrice}</h4>
-              // <i class="fa-solid fa-trash" id="trash_${data[0]._id}" ></i>
-              // </div>
-              // <h3></h3>
-              // <div class="cart-button">
-              // <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
-              // <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
-              // <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
-              // <h5>${data[0].color[0]}</h5>
-              // </div>
-              // </div>
+      for (let i = 0; i < basket.length; i++) {
+        html = ` 
+                    <div class="cartWrap" id="cartWrap_${data[0]._id}">
+              <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+              <div class="cart-right">
+              <h5>${data[0].productName}</h5>
+              <div class="price-cart">
+              <h4 id="updated_${data[0]._id}">₹${data[0].price} </h4>
+              <h4 class="strike" id="strike_${data[0]._id}">₹${data[0].originalPrice}</h4>
+              <i class="fa-solid fa-trash" id="trash_${data[0]._id}" ></i>
+              </div>
+              <h3></h3>
+              <div class="cart-button">
+              <i class="fa-solid fa-minus" id="minu_${data[0]._id}"></i>
+              <span  id="quantity_${data[0]._id}">${basket[i].item}</span>
+              <i class="fa-solid fa-plus" id="plus_${data[0]._id}" ></i>
+              <h5>${data[0].color[0]}</h5>
+              </div>
+              </div>
               
-              // </div>
-      // `;
+              </div>`;
+              
+              let subtotal = document.querySelector(".subtotal");
+              
+              let updatecart = document.querySelector(".updateCart");
+          
+           sum=0;
+           total=0
+           for(let i=0;i<basket.length;i++){
+            let element=basket[i];
+            console.log(element)
+            total+=element.total
+            sum+=element.item
+            
+           }
+           subtotal.innerText = `₹ ${total}`;
+           updatecart.innerText = sum;
+        cart_main.addEventListener("click", (e) => {
+          let original_price = document.querySelector(
+            `#updated_${data[0]._id}`
+          );
+          let strike_price = document.querySelector(`#strike_${data[0]._id}`);
+          let cart_wrap = document.querySelector(`#cartWrap_${data[0]._id}`);
+          let checkout_subtotal= document.querySelector(".checkout_subtotal")
+              let quatity = document.querySelector(`#quantity_${data[0]._id}`);
+            
+              // for(let i=0;i<basket.length;i++){
+              //   let element=basket[i];
+              //   console.log(element)
+              //   total+=price
+              //   sum+=1
+                
+              //  }
 
-        // cart_main.addEventListener("click", (e) => {
-        //   const sum = basket.reduce(
-        //     (previousValue, currentValue) => previousValue + currentValue.item,
-        //     0
-        //   );
-        //   console.log(sum, "sum");
-        //   const total = basket.reduce(
-        //     (previousValue, currentValue) => previousValue + currentValue.total,
-        //     0
-        //   );
-        //   let checkout_subtotal= document.querySelector(".checkout_subtotal")
-        //   let subtotal = document.querySelector(".subtotal");
-        //   let quatity = document.querySelector(`#quantity_${data[0]._id}`);
-        //   let updatecart = document.querySelector(".updateCart");
-        //   let original_price = document.querySelector(
-        //     `#updated_${data[0]._id}`
-        //   );
-        //   let strike_price = document.querySelector(`#strike_${data[0]._id}`);
-        //   let cart_wrap = document.querySelector(`#cartWrap_${data[0]._id}`);
-
-        //   if (e.target.id == `minu_${data[0]._id}`) {
-        //     basket[i].item -= 1;
-        //     quatity.innerText = basket[i].item;
-        //     console.log(basket, "minus");
-        //     updatecart.innerText = sum;
-        //     original_price.innerText = `₹${data[0].price * basket[i].item}`;
-        //     strike_price.innerText = `₹${
-        //       data[0].originalPrice * basket[i].item
-        //     }`;
-        //     basket[i].total = data[0].price * basket[i].item;
-        //     subtotal.innerText = `₹ ${total}`;
-        //     checkout_subtotal.innerText=`₹ ${total}`
-        //     sessionStorage.setItem("cartData",JSON.stringify(basket))
-        //   }
-        //   if (e.target.id == `plus_${data[0]._id}`) {
-        //     basket[i].item += 1;
-        //     quatity.innerText= basket[i].item;
-        //     console.log(basket, "plus");
-        //     updatecart.innerText = sum;
-        //     original_price.innerText = `₹${data[0].price * basket[i].item}`;
-        //     strike_price.innerText = `₹${
-        //       data[0].originalPrice * basket[i].item
-        //     }`;
-        //     basket[i].total = data[0].price * basket[i].item;
-        //     subtotal.innerText = `₹ ${total}`;
-        //     checkout_subtotal.innerText=`₹ ${total}`
-        //     sessionStorage.setItem("cartData",JSON.stringify(basket))
-        //   }
-        //   if (e.target.id == `trash_${data[0]._id}`) {
-        //     basket.splice(i, 1);
-        //     console.log(basket);
-        //     cart_wrap.style.display = "none";
-        //     sessionStorage.setItem("cartData",JSON.stringify(basket))
-        //   }
-        // });
+          if (e.target.id == `minu_${data[0]._id}`) {
+            basket[i].item -= 1;
+            quatity.innerText = basket[i].item;
+            console.log(basket, "minus");
+            
+            original_price.innerText = `₹${data[0].price * basket[i].item}`;
+            strike_price.innerText = `₹${
+              data[0].originalPrice * basket[i].item
+            }`;
+            basket[i].total = data[0].price * basket[i].item;
+            sum=0
+            total=0
+            for(let i=0;i<basket.length;i++){
+              let element=basket[i];
+              console.log(element)
+              total+=element.total
+              sum+=element.item
+              
+             }
+             updatecart.innerText = sum;
+            subtotal.innerText = `₹ ${total}`;
+            checkout_subtotal.innerText=`₹ ${total}`
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
+          }
+          else if (e.target.id == `plus_${data[0]._id}`) {
+            console.log(basket[i])
+            basket[i].item += 1;
+            quatity.innerText= basket[i].item;
+            console.log(basket, "plus");
+        
+            original_price.innerText = `₹${data[0].price * basket[i].item}`;
+            strike_price.innerText = `₹${
+              data[0].originalPrice * basket[i].item
+            }`;
+            basket[i].total = data[0].price * basket[i].item;
        
-      // }
-      // cart_main.innerHTML += html;
+           
+            
+              total+=basket[i].total
+              sum+=1
+              
+             
+             updatecart.innerText = sum;
+            subtotal.innerText = `₹ ${total}`;
+            subtotal.innerText = `₹ ${total}`;
+            checkout_subtotal.innerText=`₹ ${total}`
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
+          }
+         else if (e.target.id == `trash_${data[0]._id}`) {
+            basket.splice(i, 1);
+            console.log(basket);
+            cart_wrap.style.display = "none";
+            sessionStorage.setItem("cartData",JSON.stringify(basket))
+          }
+        });
+       
+      }
+      cart_main.innerHTML += html;
+
+      for (let i = 0; i < basket.length; i++) {
+        html2 = ` 
+                    <div class="cartWraping" >
+              <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+              <div class="cart-right">
+              <h3>${data[0].productName}</h3>
+              <div class="price-cart">
+              <h3>₹${data[0].price*basket[i].item} </h3>
+              <h5>Quantity:  ${basket[i].item}</h5>
+              </div>
+              </div>
+              
+              </div>`;
+              
+
+      }
+      cart_items.innerHTML+=html2
     });
 });
+
 
 
 // -------------------------------------------------

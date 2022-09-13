@@ -633,3 +633,18 @@ hr {
 .updateCart{
   color: aliceblue;
 }
+
+.cartWraping{
+display: flex;
+align-items: center;
+justify-content: space-around;
+padding: 10%;
+border-bottom: 1px solid rgba(0, 0, 0, 0.214);
+}
+.cartWraping h3{
+color: #000;
+padding-top: 20px;
+}
+.cartWraping h5{
+  padding-top: 20px;
+}

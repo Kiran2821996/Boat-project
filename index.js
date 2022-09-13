@@ -3313,13 +3313,15 @@ const summaryy=document.querySelector(".summaryy")
 const closyy = document.querySelector(".closyy")
 const payment_Checkout=document.querySelector(".payment_Checkout")
 const aside=document.querySelector("aside")
-
+const clearStorage = document.querySelector(".clearStorage")
 paybtn2.addEventListener("click",()=>{
   payout1.style.display="block"
   payment_Checkout.style.filter="blur(8px)"
   aside.style.filter="blur(8px)"
 })
-
+clearStorage.addEventListener("click",()=>{
+  sessionStorage.clear();
+})
 
 addressy.addEventListener("click",()=>{
     if(paymid1.style.display="block"){
@@ -3361,6 +3363,7 @@ const checkyy = document.querySelector(".checkyy")
 
 checkyy.addEventListener("click",()=>{
     payout.style.display="block"
+    aside.style.filter="blur(8px)"
 })
 
 const cart_items= document.querySelector(".cart_items")
@@ -3445,7 +3448,7 @@ main.addEventListener("click", (e) => {
           );
           let strike_price = document.querySelector(`#strike_${data[0]._id}`);
           let cart_wrap = document.querySelector(`#cartWrap_${data[0]._id}`);
-          let checkout_subtotal= document.querySelector(".checkout_subtotal")
+         
               let quatity = document.querySelector(`#quantity_${data[0]._id}`);
             
               // for(let i=0;i<basket.length;i++){
@@ -3477,7 +3480,7 @@ main.addEventListener("click", (e) => {
              }
              updatecart.innerText = sum;
             subtotal.innerText = `₹ ${total}`;
-            checkout_subtotal.innerText=`₹ ${total}`
+            // checkout_subtotal.innerText=`₹ ${total}`
             sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
           else if (e.target.id == `plus_${data[0]._id}`) {
@@ -3500,8 +3503,7 @@ main.addEventListener("click", (e) => {
              
              updatecart.innerText = sum;
             subtotal.innerText = `₹ ${total}`;
-            subtotal.innerText = `₹ ${total}`;
-            checkout_subtotal.innerText=`₹ ${total}`
+            // checkout_subtotal.innerText=`₹ ${total}`
             sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
          else if (e.target.id == `trash_${data[0]._id}`) {
@@ -3529,9 +3531,18 @@ main.addEventListener("click", (e) => {
               
               </div>`;
               
-
+             
       }
+      let checkout_subtotal= document.querySelector(".checkout_subtotal")
+      const sumOfItems = basket.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.total,
+        0,
+      );
+      
+      console.log(sumOfItems)
+      checkout_subtotal.innerText= `₹${sumOfItems}`
       cart_items.innerHTML+=html2
+      sessionStorage.setItem("cartData",JSON.stringify(basket))
     });
 });
 

@@ -54,4 +54,37 @@ checkyy.addEventListener("click",()=>{
 })
 
 let transferdata = JSON.parse(sessionStorage.getItem("cartData"))
-console.log(transferdata);
+console.log(transferdata,"kkkkkkkkkkk");
+
+const cart_items=document.querySelector(".cart_items")
+ 
+for(let i=0;i<transferdata.length;i++){
+    const data = { _id : `${transferdata[i].id._id}` };
+    fetch("http://localhost:3333/boat/Products", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((datas)=>{
+           console.log(datas,"lppp");
+           html = ` 
+                    <div class="cartWraping" >
+              <img src="${datas[0].productImages[0]}" alt="" width="50%" height="50%">
+              <div class="cart-right">
+              <h5>${datas[0].productName}</h5>
+              <div class="price-cart">
+              <h4>₹${datas[0].price} </h4>
+              <span>${transferdata[i].item}</span>
+              </div>
+              </div>
+              
+              </div>`;
+
+              cart_items.innerHTML+=html
+        })
+
+        
+}

@@ -77,6 +77,7 @@ if (cartmain.innerHTML == null) {
   
   closy.addEventListener("click",()=>{
       paymentt_Checkout.style.display="none"
+      aside.style.filter="none"
   })
   
   const payoutt = document.querySelector(".payment_Checkout")

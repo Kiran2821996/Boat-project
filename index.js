@@ -3356,6 +3356,7 @@ summaryy.addEventListener("click",()=>{
 
 closyy.addEventListener("click",()=>{
     payment_Checkout.style.display="none"
+    aside.style.filter="none"
 })
 
 const payout = document.querySelector(".payment_Checkout")

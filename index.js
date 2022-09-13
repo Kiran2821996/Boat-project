@@ -3365,6 +3365,7 @@ const checkyy = document.querySelector(".checkyy")
 checkyy.addEventListener("click",()=>{
     payout.style.display="block"
     aside.style.filter="blur(8px)"
+    // location.reload()
 })
 
 const cart_items= document.querySelector(".cart_items")
@@ -3427,10 +3428,22 @@ main.addEventListener("click", (e) => {
               </div>
               
               </div>`;
-              
+              html2 = ` 
+              <div class="cartWraping" >
+        <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
+        <div class="cart-right">
+        <h3>${data[0].productName}</h3>
+        <div class="price-cart">
+        <h3 id="updatedd_${data[0]._id}">₹${data[0].price} </h3>
+        <h5 id="quantityy_${data[0]._id}">Quantity:${basket[i].item}</h5>
+        </div>
+        </div>
+        
+        </div>`;
               let subtotal = document.querySelector(".subtotal");
               
               let updatecart = document.querySelector(".updateCart");
+             
           
            sum=0;
            total=0
@@ -3444,13 +3457,16 @@ main.addEventListener("click", (e) => {
            subtotal.innerText = `₹ ${total}`;
            updatecart.innerText = sum;
         cart_main.addEventListener("click", (e) => {
+          
+          let updatePrice=document.querySelector(`#updatedd_${data[0]._id}`)
           let original_price = document.querySelector(
             `#updated_${data[0]._id}`
           );
           let strike_price = document.querySelector(`#strike_${data[0]._id}`);
           let cart_wrap = document.querySelector(`#cartWrap_${data[0]._id}`);
-         
+          let checkout_subtotal= document.querySelector(".checkout_subtotal")    
               let quatity = document.querySelector(`#quantity_${data[0]._id}`);
+              let checkoutQuatity=document.querySelector(`#quantityy_${data[0]._id}`)
             
               // for(let i=0;i<basket.length;i++){
               //   let element=basket[i];
@@ -3463,9 +3479,11 @@ main.addEventListener("click", (e) => {
           if (e.target.id == `minu_${data[0]._id}`) {
             basket[i].item -= 1;
             quatity.innerText = basket[i].item;
+            checkoutQuatity.innerText=basket[i].item;
             console.log(basket, "minus");
             
             original_price.innerText = `₹${data[0].price * basket[i].item}`;
+            updatePrice.innerText=`₹${data[0].price * basket[i].item}`
             strike_price.innerText = `₹${
               data[0].originalPrice * basket[i].item
             }`;
@@ -3481,16 +3499,18 @@ main.addEventListener("click", (e) => {
              }
              updatecart.innerText = sum;
             subtotal.innerText = `₹ ${total}`;
-            // checkout_subtotal.innerText=`₹ ${total}`
+            checkout_subtotal.innerText=`₹ ${total}`
             sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
           else if (e.target.id == `plus_${data[0]._id}`) {
             console.log(basket[i])
             basket[i].item += 1;
+            checkoutQuatity.innerText=basket[i].item;
             quatity.innerText= basket[i].item;
             console.log(basket, "plus");
         
             original_price.innerText = `₹${data[0].price * basket[i].item}`;
+            updatePrice.innerText=`₹${data[0].price * basket[i].item}`
             strike_price.innerText = `₹${
               data[0].originalPrice * basket[i].item
             }`;
@@ -3504,7 +3524,7 @@ main.addEventListener("click", (e) => {
              
              updatecart.innerText = sum;
             subtotal.innerText = `₹ ${total}`;
-            // checkout_subtotal.innerText=`₹ ${total}`
+            checkout_subtotal.innerText=`₹ ${total}`
             sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
          else if (e.target.id == `trash_${data[0]._id}`) {
@@ -3513,35 +3533,20 @@ main.addEventListener("click", (e) => {
             cart_wrap.style.display = "none";
             sessionStorage.setItem("cartData",JSON.stringify(basket))
           }
+          
+           
+                  
+                 
+          
+
         });
        
       }
       cart_main.innerHTML += html;
 
-      for (let i = 0; i < basket.length; i++) {
-        html2 = ` 
-                    <div class="cartWraping" >
-              <img src="${data[0].productImages[0]}" alt="" width="50%" height="50%">
-              <div class="cart-right">
-              <h3>${data[0].productName}</h3>
-              <div class="price-cart">
-              <h3>₹${data[0].price*basket[i].item} </h3>
-              <h5>Quantity:  ${basket[i].item}</h5>
-              </div>
-              </div>
-              
-              </div>`;
-              
-             
-      }
-      let checkout_subtotal= document.querySelector(".checkout_subtotal")
-      const sumOfItems = basket.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.total,
-        0,
-      );
-      
-      console.log(sumOfItems)
-      checkout_subtotal.innerText= `₹${sumOfItems}`
+   
+     
+     
       cart_items.innerHTML+=html2
       sessionStorage.setItem("cartData",JSON.stringify(basket))
     });

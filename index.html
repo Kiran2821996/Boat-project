@@ -306,13 +306,7 @@
             <h4>>>>>>></h4>
             <h4 style="color: rgb(0, 187, 255) ;">Address  & Payments</h4>
           </div>
-          <!-- <div class="payment_Checkout_top2_3">
-            <h4>Summary</h4>
-            <h4>>>>>>></h4>
-            <h4>Address</h4>
-            <h4>>>>>>></h4>
-            <h4 style="color: rgb(0, 187, 255) ;">Payments</h4>
-          </div> -->
+        
         </div>
         <div class="payment_Checkout_middle1">
           <div class="contact_details">
@@ -403,13 +397,13 @@
         <img src="./header-images/Order-Received-List-Detail-512.webp" alt="" width="200px" height="200px">
         <h3 class="clearStorage"><a href="./index.html">OK</a></h3>
       </div>
+      
         <!-- ============================================================================= -->
 
-
-      <!-- <div class="search_popup" style="overflow-y: scroll;"> -->
         <div class="search_popup"  style="overflow-y: scroll;">
 
-        <input  class="search_popup-input" type="text">
+        <input  class="search_popup-input" type="text" onkeypress="
+        enterKeyPressed(event)">
       
         <button class="search-search-button">Search</button>
         <button class="search_pop-close">X</button>
@@ -418,13 +412,57 @@
         <div class="div1-search"></div>
 
         <script>
-          
+
+        function enterKeyPressed(event){
+          if(event.keyCode==13){
+            divvv.innerHTML =""
+              fetch("http://localhost:3333/boat/Products", {
+                  method: "POST", // or 'PUT'
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+              })
+                  .then((response) => response.json())
+                  .then((data) => {
+                      for (let i = 0; i < data.length; i++) {
+                          let datas = data.filter((result) => {
+                              if (result.productName.includes(search.value)) {
+        
+                               let html =`
+                                  <div class="main-searchbox">
+                 <div class="best-seller-div-search">
+                  <div class="wrapper-of-best-seller-images-search">
+                  
+                  <img class="best-seller-image-front-search" src="${
+                   result.productImages[0]
+                 }  alt="">
+                
+            </div><div class="inside-best-seller-search"> <h3 class="productname-search" >${result.productName}</h3></a> 
+                <p class="icon-para-search"><i class="fa-solid fa-star" style="color:red;"></i>
+                  ${result.rating} -${result.noOfReviews} reviews</p>
+                <div class="price-and-discount-search">
+                    <h5 class = "current-price-search">${result.price} </h5>
+                    <p class="earlier-price-search">₹${result.originalPrice}</p>
+                </div>
+                <p class="save-money-search">You Save: ₹ ${result.originalPrice - result.price} (${result.offer}%)</p>
+            </div>
+            </div>
+            </div>   `
+            divvv.innerHTML +=html
+                              }
+                          })
+                          
+                      }
+                  })
+        }
+          }
+
           let search = document.querySelector(".search_popup-input")
           let buttonSSearch = document.querySelector(".search-search-button")
           let divvv = document.querySelector(".div1-search")
           let closebutton= document.querySelector(".closebutton-searchbar")
           
-          buttonSSearch.addEventListener("click", () => {
+          buttonSSearch.addEventListener("click",function (){
               divvv.innerHTML =""
               fetch("http://localhost:3333/boat/Products", {
                   method: "POST", // or 'PUT'
@@ -528,12 +566,7 @@
           <h3 class="heading-of-carousels">BEST SELLERS</h3>
          
           <div readonly class="best_sellers">
-       
-         
-          <!-- <div class="curoselBtn1 carosel_flex">
-            <button class="carosel_left1"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right1"><i class="fa-solid fa-arrow-right"></i></button>
-          </div> -->
+
         </div>
           
         </section>
@@ -565,10 +598,7 @@
           </div>
         </section>
         <!-- ------------------------------------------------ -->
-          <div readonly class="daily_deals"></div>
-          <!-- <div class="curoselBtn2 carosel_flex">
-            <button class="carosel_left2"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right2"><i class="fa-solid fa-arrow-right"></i></button> -->
+          <div readonly class="daily_deals"> </div>
         </section>
         
         <section>
@@ -576,45 +606,27 @@
             Biggest Launches. Dopest Products. 🚀
           </h3>
           <div readonly class="biggest_launch"></div>
-          <!-- <div class="curoselBtn3 carosel_flex">
-            <button class="carosel_left3"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right3"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels">Smart Watches</h3>
           <div readonly class="smart_watches"></div>
-          <!-- <div class="curoselBtn4 carosel_flex">
-            <button class="carosel_left4"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right4"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels" id="trending_wireless_earphones">Trending Wireless</h3>
           <div readonly class="trending_wireless"></div>
-          <!-- <div class="curoselBt5 carosel_flex">
-            <button class="carosel_left5"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right5"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels" id="top_earbuds_amazing_product">Top Earbuds</h3>
           <div readonly class="top_earbuds"></div>
-          <!-- <div class="curoselBtn6 carosel_flex">
-            <button class="carosel_left6"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right6"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
 
         <section>
           <h3 class="heading-of-carousels">Trending Wired</h3>
           <div readonly class="trending_wired"></div>
-          <!-- <div class="curoselBtn7 carosel_flex">
-            <button class="carosel_left7"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right7"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels">Trending ANC</h3>
           <div readonly class="trending_anc"></div>
-          <!-- <div class="curoselBtn8 carosel_flex">
-            <button class="carosel_left8"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right8"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels">boAt | Superheroes</h3>
@@ -624,20 +636,11 @@
           </div>
 
           <div class="dc"></div>
-          <!-- <div class="curoselBt9 carosel_flex">
-            <button class="carosel_left9"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right9"><i class="fa-solid fa-arrow-right"></i></button> -->
           <div class="marvel"></div>
-          <!-- <div class="curoselBtn10 carosel_flex">
-            <button class="carosel_left10"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right10"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels" id="best_sound_home_audio">Home Audio</h3>
           <div readonly class="home_audio"></div>
-          <!-- <div class="curoselBtn11 carosel_flex">
-            <button class="carosel_left11"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right11"><i class="fa-solid fa-arrow-right"></i></button> -->
         </section>
         <section>
           <h3 class="heading-of-carousels">Grab Now</h3>
@@ -645,7 +648,6 @@
         </section>
         <!-- ------------------------------------------- -->
         <div class="boat_blogs_container">
-          <!-- <div class="boat_blogs"> -->
           <h1 class="boat_blogs_heading">boAt Blogs</h1>
           <div class="boat_blogs_row"></div>
           <!-- </div> -->

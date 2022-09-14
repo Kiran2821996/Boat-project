@@ -602,6 +602,7 @@ function generate() {
             }
           });
         } else {
+         
           html = ` <div class="main">
           <div class="best-seller-div">
            <div class="wrapper-of-best-seller-images">
@@ -937,6 +938,7 @@ function generate() {
 
     });
   const data10 = { description: "Marvel" };
+ 
   fetch("http://localhost:3333/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
@@ -948,6 +950,7 @@ function generate() {
     .then((result) => {
       for (let i = 0; i < result.length; i++) {
         if (result[i].tag.length > 5) {
+          
           html = `
           <div class="main">
           <div class="best-seller-div">

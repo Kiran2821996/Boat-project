@@ -1411,33 +1411,36 @@ main.addEventListener("click", (e) => {
      
 
           if (e.target.id == `minu_${data[0]._id}`) {
-            basket[i].item -= 1;
-            quatity.innerText = basket[i].item;
-            checkoutQuatity.innerText=basket[i].item;
-            console.log(basket, "minus");
-            
-            original_price.innerText = `₹${data[0].price * basket[i].item}`;
-            updatePrice.innerText=`₹${data[0].price * basket[i].item}`
-            strike_price.innerText = `₹${
-              data[0].originalPrice * basket[i].item
-            }`;
-            basket[i].total = data[0].price * basket[i].item;
-            sum=0
-            total=0
-            for(let i=0;i<basket.length;i++){
-              let element=basket[i];
-              console.log(element)
-              total+=element.total
-              sum+=element.item
+            if( basket[i].item >1){
+              basket[i].item -= 1;
+              quatity.innerText = basket[i].item;
+              checkoutQuatity.innerText=basket[i].item;
+              console.log(basket, "minus");
               
-             }
-             updatecart.innerText = sum;
-             basItem.innerText=sum;
-            subtotal.innerText = `₹ ${total}`;
-            checkout_subtotal.innerText=`₹ ${total}`
-            sessionStorage.setItem("totalItems",JSON.stringify(sum))
-            sessionStorage.setItem("sumTotal",JSON.stringify(total))
-            sessionStorage.setItem("cartData",JSON.stringify(basket))
+              original_price.innerText = `₹${data[0].price * basket[i].item}`;
+              updatePrice.innerText=`₹${data[0].price * basket[i].item}`
+              strike_price.innerText = `₹${
+                data[0].originalPrice * basket[i].item
+              }`;
+              basket[i].total = data[0].price * basket[i].item;
+              sum=0
+              total=0
+              for(let i=0;i<basket.length;i++){
+                let element=basket[i];
+                console.log(element)
+                total+=element.total
+                sum+=element.item
+                
+               }
+               updatecart.innerText = sum;
+               basItem.innerText=sum;
+              subtotal.innerText = `₹ ${total}`;
+              checkout_subtotal.innerText=`₹ ${total}`
+              sessionStorage.setItem("totalItems",JSON.stringify(sum))
+              sessionStorage.setItem("sumTotal",JSON.stringify(total))
+              sessionStorage.setItem("cartData",JSON.stringify(basket))
+            }
+           
           }
           else if (e.target.id == `plus_${data[0]._id}`) {
             console.log(basket[i])

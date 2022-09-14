@@ -183,30 +183,33 @@ let reloadTotal = document.querySelector(".subtotal")
        
       }
       if (e.target.id == `minu_${datas[0]._id}`) {
-        cartArray[i].item -= 1;
-        quantity.innerText= cartArray[i].item;
-        checkoutQuatityy.innerText=cartArray[i].item;
-        sum1=0
-        total1=0
-        for(let i=0;i<cartArray.length;i++){
-          let element=cartArray[i];
-          console.log(element)
-          total1+=element.total
-          sum1+=element.item
-          
-         }
-        console.log(cartArray, "minus");
-        updatecartt.innerText = sum1;
-        basItemm.innerText = sum1;
-        originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
-        updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
-        strikeprice.innerText = `₹${
-          datas[0].originalPrice * cartArray[i].item
-        }`;
-        cartArray[i].total = datas[0].price * cartArray[i].item;
-        subtotall.innerText = `₹ ${total1}`;
-        checkoutsubtotal.innerText=`₹ ${total1}`
-        sessionStorage.setItem("cartData",JSON.stringify(cartArray))
+        if(cartArray[i].item > 1){
+          cartArray[i].item -= 1;
+          quantity.innerText= cartArray[i].item;
+          checkoutQuatityy.innerText=cartArray[i].item;
+          sum1=0
+          total1=0
+          for(let i=0;i<cartArray.length;i++){
+            let element=cartArray[i];
+            console.log(element)
+            total1+=element.total
+            sum1+=element.item
+            
+           }
+          console.log(cartArray, "minus");
+          updatecartt.innerText = sum1;
+          basItemm.innerText = sum1;
+          originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
+          updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
+          strikeprice.innerText = `₹${
+            datas[0].originalPrice * cartArray[i].item
+          }`;
+          cartArray[i].total = datas[0].price * cartArray[i].item;
+          subtotall.innerText = `₹ ${total1}`;
+          checkoutsubtotal.innerText=`₹ ${total1}`
+          sessionStorage.setItem("cartData",JSON.stringify(cartArray))
+        }
+       
       }
       
       if (e.target.id == `plus_${datas[0]._id}`) {

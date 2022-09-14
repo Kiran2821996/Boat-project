@@ -398,13 +398,15 @@
         <img src="./header-images/Order-Received-List-Detail-512.webp" alt="" width="200px" height="200px">
         <h3 class="clearStorage"><a href="./index.html">OK</a></h3>
       </div>
+      
         <!-- ============================================================================= -->
 
 
       <!-- <div class="search_popup" style="overflow-y: scroll;"> -->
         <div class="search_popup"  style="overflow-y: scroll;">
 
-        <input  class="search_popup-input" type="text">
+        <input  class="search_popup-input" type="text" onkeypress="
+        enterKeyPressed(event)">
       
         <button class="search-search-button">Search</button>
         <button class="search_pop-close">X</button>
@@ -413,13 +415,57 @@
         <div class="div1-search"></div>
 
         <script>
-          
+
+        function enterKeyPressed(event){
+          if(event.keyCode==13){
+            divvv.innerHTML =""
+              fetch("http://localhost:3333/boat/Products", {
+                  method: "POST", // or 'PUT'
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+              })
+                  .then((response) => response.json())
+                  .then((data) => {
+                      for (let i = 0; i < data.length; i++) {
+                          let datas = data.filter((result) => {
+                              if (result.productName.includes(search.value)) {
+        
+                               let html =`
+                                  <div class="main-searchbox">
+                 <div class="best-seller-div-search">
+                  <div class="wrapper-of-best-seller-images-search">
+                  
+                  <img class="best-seller-image-front-search" src="${
+                   result.productImages[0]
+                 }  alt="">
+                
+            </div><div class="inside-best-seller-search"> <h3 class="productname-search" >${result.productName}</h3></a> 
+                <p class="icon-para-search"><i class="fa-solid fa-star" style="color:red;"></i>
+                  ${result.rating} -${result.noOfReviews} reviews</p>
+                <div class="price-and-discount-search">
+                    <h5 class = "current-price-search">${result.price} </h5>
+                    <p class="earlier-price-search">₹${result.originalPrice}</p>
+                </div>
+                <p class="save-money-search">You Save: ₹ ${result.originalPrice - result.price} (${result.offer}%)</p>
+            </div>
+            </div>
+            </div>   `
+            divvv.innerHTML +=html
+                              }
+                          })
+                          
+                      }
+                  })
+        }
+          }
+
           let search = document.querySelector(".search_popup-input")
           let buttonSSearch = document.querySelector(".search-search-button")
           let divvv = document.querySelector(".div1-search")
           let closebutton= document.querySelector(".closebutton-searchbar")
           
-          buttonSSearch.addEventListener("click", () => {
+          buttonSSearch.addEventListener("click",function (){
               divvv.innerHTML =""
               fetch("http://localhost:3333/boat/Products", {
                   method: "POST", // or 'PUT'

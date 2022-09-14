@@ -141,7 +141,7 @@ let reloadTotal = document.querySelector(".subtotal")
  let tootalItem=JSON.parse(sessionStorage.getItem("totalItems")) 
   let sumdata=JSON.parse(sessionStorage.getItem("sumTotal"))  
   reloadCart.innerText=tootalItem
-  reloadTotal.innerText=sumdata
+  reloadTotal.innerText=`₹${sumdata}`
 
      
      cartmain.addEventListener("click", (e) => {

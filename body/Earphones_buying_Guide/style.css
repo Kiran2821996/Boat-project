@@ -132,9 +132,9 @@ html{
     display: flex;
 }
 .rockerz_235v2,.rockerz_245v2,.bassheads_242{
-    width: 300px;
+    width: 280px;
     text-align: center;
-    padding-top: 20px;
+    padding:20px 0 0 0;
 }
 
 .middle{
@@ -224,7 +224,7 @@ select{
 
 .smart_watch_div,.grooving_div{
     width: 350px;
-    height: 260px;
+    height: 300px;
     background-color:#2d2d2d ;
 }
 
@@ -235,4 +235,15 @@ select{
 .additional_content_heading{
     font-size: 23px;
     padding: 3px;
+}
+
+.boat_links{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.rockz_devices{
+    text-decoration: none;
+    color:white;
 }

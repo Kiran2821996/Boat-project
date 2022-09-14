@@ -529,7 +529,7 @@ input:focus {
     .cart_top2{
       padding: 5px 0 5px 20px;
       text-align: left;
-      height:18vh;
+      height:5vh;
       background-color: #000000;
       color: rgb(224, 224, 224);
       font-size: larger;
@@ -539,7 +539,7 @@ input:focus {
       flex-direction: column;
       /* justify-content: center; */
       padding: 10px;
-      height: 55vh;
+      height: 68vh;
       background-color: white;
       overflow-y: scroll;
     }

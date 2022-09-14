@@ -543,6 +543,10 @@ input:focus {
       background-color: white;
       overflow-y: scroll;
     }
+    .basItem{
+      color: white;
+      font-size: large;
+    }
     .cart_bottom{
       height:27vh ;
       background-color: white;

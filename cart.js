@@ -136,11 +136,13 @@ console.log(cartArray,"oputhdgf");
 </div>
 
 </div>`;
+let reloadbas=document.querySelector(".basItem")
 let reloadCart=document.querySelector(".updateCart")
 let reloadTotal = document.querySelector(".subtotal")
  let tootalItem=JSON.parse(sessionStorage.getItem("totalItems")) 
   let sumdata=JSON.parse(sessionStorage.getItem("sumTotal"))  
   reloadCart.innerText=tootalItem
+  reloadbas.innerText=tootalItem
   reloadTotal.innerText=`₹${sumdata}`
 
      
@@ -162,6 +164,7 @@ let reloadTotal = document.querySelector(".subtotal")
      
       let subtotall = document.querySelector(".subtotal");
       let quantity = document.querySelector(`#quantity_${datas[0]._id}`);
+      let basItemm = document.querySelector(".basItem");
       let updatecartt = document.querySelector(".updateCart");
       let originalprice = document.querySelector(
         `#updated_${datas[0]._id}`
@@ -194,6 +197,7 @@ let reloadTotal = document.querySelector(".subtotal")
          }
         console.log(cartArray, "minus");
         updatecartt.innerText = sum1;
+        basItemm.innerText = sum1;
         originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
         updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
         strikeprice.innerText = `₹${
@@ -213,6 +217,7 @@ let reloadTotal = document.querySelector(".subtotal")
         total1+=cartArray[i].total
               sum1+=1
         updatecartt.innerText = sum1;
+        basItemm.innerText = sum1;
         originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
         updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
         strikeprice.innerText = `₹${

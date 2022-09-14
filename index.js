@@ -353,7 +353,7 @@ function generate() {
           });
         }
       }
-      biggest_launch+= `<p>Lorem, ipsum asodnzcoa  ajdis.</p>`
+      // biggest_launch+= `<p>Lorem, ipsum asodnzcoa  ajdis.</p>`
     });
   const data4 = { description: "Smart watches" };
   fetch("http://localhost:3333/boat/Products", {
@@ -1381,6 +1381,8 @@ main.addEventListener("click", (e) => {
               let subtotal = document.querySelector(".subtotal");
               
               let updatecart = document.querySelector(".updateCart");
+
+              let basItem = document.querySelector(".basItem");
       
            sum=0;
            total=0
@@ -1391,8 +1393,10 @@ main.addEventListener("click", (e) => {
             sum+=element.item
             
            }
+          
            subtotal.innerText = `₹ ${total}`;
            updatecart.innerText = sum;
+           basItem.innerText=sum;
         cart_main.addEventListener("click", (e) => {
           
           let updatePrice=document.querySelector(`#updatedd_${data[0]._id}`)
@@ -1428,6 +1432,7 @@ main.addEventListener("click", (e) => {
               
              }
              updatecart.innerText = sum;
+             basItem.innerText=sum;
             subtotal.innerText = `₹ ${total}`;
             checkout_subtotal.innerText=`₹ ${total}`
             sessionStorage.setItem("totalItems",JSON.stringify(sum))
@@ -1452,8 +1457,10 @@ main.addEventListener("click", (e) => {
               sum+=1
               
              updatecart.innerText = sum;
+             basItem.innerText=sum;
             subtotal.innerText = `₹ ${total}`;
             checkout_subtotal.innerText=`₹ ${total}`
+            
             sessionStorage.setItem("totalItems",JSON.stringify(sum))
             sessionStorage.setItem("sumTotal",JSON.stringify(total))
             sessionStorage.setItem("cartData",JSON.stringify(basket))

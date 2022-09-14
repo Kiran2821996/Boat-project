@@ -9,10 +9,10 @@ let cartmain=document.querySelector(".cart_main");
 let emptybasket = document.querySelector(".empty");
 console.log(cartArray,"oputhdgf");
 
-if (cartmain.innerHTML == null) {
-  emptybasket.style.display = "block";
-  }
-  emptybasket.style.display = "none";
+// if (cartmain.innerHTML == null) {
+//   emptybasket.style.display = "block";
+//   }
+//   emptybasket.style.display = "none";
 
   const paybtnn = document.querySelector(".payment_Checkout_bottom_btn")
   const paybtnn2 = document.querySelector(".payment_Checkout_bottom_paybtn")
@@ -124,6 +124,25 @@ if (cartmain.innerHTML == null) {
            
            </div>
      `;
+     html2 = ` 
+<div class="cartWraping" >
+<img src="${datas[0].productImages[0]}" alt="" width="50%" height="50%">
+<div class="cart-right">
+<h3>${datas[0].productName}</h3>
+<div class="price-cart">
+<h3 id="updatedd_${datas[0]._id}">₹${datas[0].price*cartArray[i].item} </h3>
+<h5 id="quantityy_${datas[0]._id}">Quantity:  ${cartArray[i].item}</h5>
+</div>
+</div>
+
+</div>`;
+let reloadCart=document.querySelector(".updateCart")
+let reloadTotal = document.querySelector(".subtotal")
+ let tootalItem=JSON.parse(sessionStorage.getItem("totalItems")) 
+  let sumdata=JSON.parse(sessionStorage.getItem("sumTotal"))  
+  reloadCart.innerText=tootalItem
+  reloadTotal.innerText=sumdata
+
      
      cartmain.addEventListener("click", (e) => {
       console.log('nmnmn');
@@ -138,6 +157,8 @@ if (cartmain.innerHTML == null) {
       //   0
       // );
       // console.log(total, "total");
+      let updatePricee=document.querySelector(`#updatedd_${datas[0]._id}`)
+      let checkoutQuatityy=document.querySelector(`#quantityy_${datas[0]._id}`)
      
       let subtotall = document.querySelector(".subtotal");
       let quantity = document.querySelector(`#quantity_${datas[0]._id}`);
@@ -147,6 +168,8 @@ if (cartmain.innerHTML == null) {
       );
       let strikeprice = document.querySelector(`#strike_${datas[0]._id}`);
       let cartwrap = document.querySelector(`#cartWrap_${datas[0]._id}`);
+      let checkoutsubtotal= document.querySelector(".checkout_subtotal");
+
       sum1=0;
       total1=0
       for(let i=0;i<cartArray.length;i++){
@@ -159,6 +182,7 @@ if (cartmain.innerHTML == null) {
       if (e.target.id == `minu_${datas[0]._id}`) {
         cartArray[i].item -= 1;
         quantity.innerText= cartArray[i].item;
+        checkoutQuatityy.innerText=cartArray[i].item;
         sum1=0
         total1=0
         for(let i=0;i<cartArray.length;i++){
@@ -171,30 +195,33 @@ if (cartmain.innerHTML == null) {
         console.log(cartArray, "minus");
         updatecartt.innerText = sum1;
         originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
+        updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
         strikeprice.innerText = `₹${
           datas[0].originalPrice * cartArray[i].item
         }`;
         cartArray[i].total = datas[0].price * cartArray[i].item;
         subtotall.innerText = `₹ ${total1}`;
-        // checkoutsubtotal.innerText=`₹ ${total1}`
+        checkoutsubtotal.innerText=`₹ ${total1}`
         sessionStorage.setItem("cartData",JSON.stringify(cartArray))
       }
       
       if (e.target.id == `plus_${datas[0]._id}`) {
         cartArray[i].item += 1;
         quantity.innerText= cartArray[i].item;
+        checkoutQuatityy.innerText=cartArray[i].item;
         console.log(cartArray, "minus");
         total1+=cartArray[i].total
               sum1+=1
         updatecartt.innerText = sum1;
         originalprice.innerText = `₹${datas[0].price * cartArray[i].item}`;
+        updatePricee.innerText=`₹${datas[0].price * cartArray[i].item}`;
         strikeprice.innerText = `₹${
           datas[0].originalPrice * cartArray[i].item
         }`;
         
         cartArray[i].total = datas[0].price * cartArray[i].item;
         subtotall.innerText = `₹ ${total1}`;
-        // checkoutsubtotal.innerText=`₹ ${total1}`
+        checkoutsubtotal.innerText=`₹ ${total1}`
         sessionStorage.setItem("cartData",JSON.stringify(cartArray))
       }
       if (e.target.id == `trash_${datas[0]._id}`) {
@@ -208,27 +235,16 @@ if (cartmain.innerHTML == null) {
      cartmain.innerHTML+=html
      const cart_items=document.querySelector(".cart_items")
 
-html2 = ` 
-<div class="cartWraping" >
-<img src="${datas[0].productImages[0]}" alt="" width="50%" height="50%">
-<div class="cart-right">
-<h3>${datas[0].productName}</h3>
-<div class="price-cart">
-<h3>₹${datas[0].price*cartArray[i].item} </h3>
-<h5>Quantity:  ${cartArray[i].item}</h5>
-</div>
-</div>
 
-</div>`;
 
-let checkoutsubtotal= document.querySelector(".checkout_subtotal")
-const sumOfItem = cartArray.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.total,
-        0,
-      );
+
+// const sumOfItem = cartArray.reduce(
+//         (previousValue, currentValue) => previousValue + currentValue.total,
+//         0,
+//       );
       
-      console.log(sumOfItem)
-      checkoutsubtotal.innerText= `₹${sumOfItem}`
+//       console.log(sumOfItem)
+//       checkoutsubtotal.innerText= `₹${sumOfItem}`
 cart_items.innerHTML+=html2
         
 })

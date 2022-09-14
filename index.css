@@ -437,7 +437,7 @@ hr {
 .home_audio::-webkit-scrollbar {
   width: 100px;
 }
-.curoselBtn1::-webkit-scrollbar,
+/* .curoselBtn1::-webkit-scrollbar,
 .curoselBtn2::-webkit-scrollbar,
 .curoselBtn3::-webkit-scrollbar,
 .curoselBtn4::-webkit-scrollbar,
@@ -458,7 +458,7 @@ hr {
   overflow-y: hidden;
   padding-right:50px;
   padding-left: 35px;
-  /* background-color: aliceblue; */
+  
 }
 
 .curoselBtn1 {
@@ -537,7 +537,7 @@ hr {
 .carosel_left10,
 .carosel_left11 {
   text-align: left;
-  display: none;
+ 
 }
 .carosel_right1,
 .carosel_right2,
@@ -551,7 +551,7 @@ hr {
 .carosel_right10,
 .carosel_right11 {
   text-align: right;
-  display: none;
+  
 }
 
 .curoselBtn1:hover .carosel_left1,
@@ -576,8 +576,8 @@ hr {
 .curoselBtn9:hover .carosel_right9,
 .curoselBtn10:hover .carosel_right10,
 .curoselBtn11:hover .carosel_right11 {
-  display: block;
-}
+  display: block; */
+/* } */
 
 /* =================================================timer========================================= */
 

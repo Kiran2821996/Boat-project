@@ -463,19 +463,19 @@ hr {
 
 .curoselBtn1 {
   position: absolute;
-  top: 100px;
+  top: 40%;
 }
 .curoselBtn2 {
   position: absolute;
-  top: 220%;
+  top: 205%;
 }
 .curoselBtn3 {
   position: absolute;
-  top: 320%;
+  top: 279%;
 }
 .curoselBtn4 {
   position: absolute;
-  top: 420%;
+  top: 355%;
 }
 .curoselBtn5 {
   position: absolute;
@@ -520,6 +520,7 @@ hr {
   color: red;
   background-color: white;
   font-size: xx-large;
+  width: 3rem;
   padding: 20%;
   border-radius: 5px;
   display: block;
@@ -585,7 +586,7 @@ hr {
   height: 10px;
 }
 .section-center-timer {
-  margin-left: 30%;
+  margin-left: 35%;
   display: flex;
   width: 30rem;
   height: 60px;
@@ -595,6 +596,7 @@ hr {
   background-color: #ffc107;
   border-radius: 10px;
   margin-bottom: 50px;
+  align-self: center
 }
 .heading-of-ending-in {
   margin: 0 1rem 0 0;
@@ -623,7 +625,6 @@ hr {
 }
 .hours-of-timer-milisecond {
   background-color: whitesmoke;
-  /* padding: 1rem; */
   width: 30px;
   height: 30px;
 }

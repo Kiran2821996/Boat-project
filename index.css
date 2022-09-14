@@ -42,7 +42,7 @@ html{
   gap: 2rem;
   overflow-x: scroll;
   user-select: none;
-  justify-content: center;
+  margin-left: 1rem;
   position: relative;
 }
 

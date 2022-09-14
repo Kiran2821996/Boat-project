@@ -503,11 +503,12 @@ input:focus {
       box-shadow: 320px 0px 0px 1100px rgba(10, 10, 10, 0.238);
       background-color: #000000;
     }
-    .empty{
-      height: 50vh;
+    /* .empty{
+      height: 50%;
       text-align: center;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.275);
       padding-top: 120px;
-    }
+    } */
     .cart_top{
       display: flex;
       align-items: center;
@@ -528,7 +529,7 @@ input:focus {
     .cart_top2{
       padding: 5px 0 5px 20px;
       text-align: left;
-      height:10vh;
+      height:18vh;
       background-color: #000000;
       color: rgb(224, 224, 224);
       font-size: larger;
@@ -538,7 +539,7 @@ input:focus {
       flex-direction: column;
       /* justify-content: center; */
       padding: 10px;
-      height: 63vh;
+      height: 55vh;
       background-color: white;
       overflow-y: scroll;
     }
@@ -546,10 +547,11 @@ input:focus {
       height:27vh ;
       background-color: white;
       border-top: 5px solid black;
+      padding: 5% 10%;
     }
     .cart_bottom1,.cart_bottom2{
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
       
     }
     .checkyy{

@@ -29,10 +29,7 @@ body{
   margin-left: 10rem;
   margin-top: 4px;
 }
-.search_pop-close:hover{
-  transform: translate3d(10px,-5px,5px);
-  transition: 1s;
-}
+
 .div1-search{
     display: flex; 
     flex-wrap: wrap;
@@ -54,11 +51,6 @@ body{
   margin-left:3rem ;
 
 }
-.search-search-button:hover{
-  transform: translate3d(10px,-5px,5px);
-  transition: 1s;
-}
-
 
   .wrapper-of-best-seller-images-search {
     display: flex;
@@ -165,8 +157,4 @@ body{
   .main-searchbox{
    margin: 10px;
   }
-  .main-searchbox:hover{
-    /* transform: scale(1.1) ; */
-    transform: translate3d(20px, -10px,20px) ;
-    transition: 1s;
-  }
+ 

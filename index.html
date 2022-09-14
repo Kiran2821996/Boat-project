@@ -144,21 +144,22 @@
         <div class="cart_top">
           <h3>Your Cart (<span class="updateCart">0</span>  Items)</h3>
           <div class="cart_close">✖</div>
+         
         </div>
+        
         <div class="cart_top2">
-          <h6>
-            Free Shipping sitewide | <span>Cash On Delivery</span> available for
-            order value upto <span>₹3000</span>
-          </h6>
+          
+          <h5>DISCLAIMER:: This is a PUZZULED CART developed for better user interactivity.</h5>
+          <h6>Take a Look on Total cart Items before Checkout.If not equal try to "+" or "-" until it gets balanced to TOTAL CART ITEMS.</h6>
+        <h6>(Hint-Click on the "+" or "-" on first product)</h6>
         </div>
         <div class="cart_main">
-          <div class="empty">
-            <h5>Your cart is empty</h5>
-            <button class="strtbtn">START SHOPPING</button>
-          </div>
-          
         </div>
         <div class="cart_bottom">
+          <h6 >
+            Free Shipping sitewide | <span>Cash On Delivery</span> available for
+            Orders
+          </h6>
           <div class="cart_bottom1">
             <h5>Shipping fee</h5>
             <h5>Free</h5>
@@ -265,16 +266,20 @@
           <div class="cart_close">✖</div>
         </div>
         <div class="cart_top2">
-          <h6>
-            Free Shipping sitewide | <span>Cash On Delivery</span> available for
-            order value upto <span>₹3000</span>
-          </h6>
+          
+          <h5>DISCLAIMER:: This is a PUZZULED CART developed for better user interactivity.</h5>
+          <h6>Take a Look on Total cart Items before Checkout.If not equal try to "+" or "-" until it gets balanced to TOTAL CART ITEMS.</h6>
+        <h6>(Hint-Click on the "+" or "-" on first product)</h6>
         </div>
         <div class="cart_main">
           <h5>Your cart is empty</h5>
           <button class="strtbtn">START SHOPPING</button>
         </div>
         <div class="cart_bottom">
+          <h6>
+            Free Shipping sitewide | <span>Cash On Delivery</span> available for
+            all Orders
+          </h6>
           <div class="cart_bottom1">
             <h5>Shipping fee</h5>
             <h5>Free</h5>
@@ -301,13 +306,7 @@
             <h4>>>>>>></h4>
             <h4 style="color: rgb(0, 187, 255) ;">Address  & Payments</h4>
           </div>
-          <!-- <div class="payment_Checkout_top2_3">
-            <h4>Summary</h4>
-            <h4>>>>>>></h4>
-            <h4>Address</h4>
-            <h4>>>>>>></h4>
-            <h4 style="color: rgb(0, 187, 255) ;">Payments</h4>
-          </div> -->
+        
         </div>
         <div class="payment_Checkout_middle1">
           <div class="contact_details">
@@ -398,13 +397,13 @@
         <img src="./header-images/Order-Received-List-Detail-512.webp" alt="" width="200px" height="200px">
         <h3 class="clearStorage"><a href="./index.html">OK</a></h3>
       </div>
+      
         <!-- ============================================================================= -->
 
-
-      <!-- <div class="search_popup" style="overflow-y: scroll;"> -->
         <div class="search_popup"  style="overflow-y: scroll;">
 
-        <input  class="search_popup-input" type="text">
+        <input  class="search_popup-input" type="text" onkeypress="
+        enterKeyPressed(event)">
       
         <button class="search-search-button">Search</button>
         <button class="search_pop-close">X</button>
@@ -413,13 +412,57 @@
         <div class="div1-search"></div>
 
         <script>
-          
+
+        function enterKeyPressed(event){
+          if(event.keyCode==13){
+            divvv.innerHTML =""
+              fetch("http://localhost:3333/boat/Products", {
+                  method: "POST", // or 'PUT'
+                  headers: {
+                      "Content-Type": "application/json",
+                  },
+              })
+                  .then((response) => response.json())
+                  .then((data) => {
+                      for (let i = 0; i < data.length; i++) {
+                          let datas = data.filter((result) => {
+                              if (result.productName.includes(search.value)) {
+        
+                               let html =`
+                                  <div class="main-searchbox">
+                 <div class="best-seller-div-search">
+                  <div class="wrapper-of-best-seller-images-search">
+                  
+                  <img class="best-seller-image-front-search" src="${
+                   result.productImages[0]
+                 }  alt="">
+                
+            </div><div class="inside-best-seller-search"> <h3 class="productname-search" >${result.productName}</h3></a> 
+                <p class="icon-para-search"><i class="fa-solid fa-star" style="color:red;"></i>
+                  ${result.rating} -${result.noOfReviews} reviews</p>
+                <div class="price-and-discount-search">
+                    <h5 class = "current-price-search">${result.price} </h5>
+                    <p class="earlier-price-search">₹${result.originalPrice}</p>
+                </div>
+                <p class="save-money-search">You Save: ₹ ${result.originalPrice - result.price} (${result.offer}%)</p>
+            </div>
+            </div>
+            </div>   `
+            divvv.innerHTML +=html
+                              }
+                          })
+                          
+                      }
+                  })
+        }
+          }
+
           let search = document.querySelector(".search_popup-input")
           let buttonSSearch = document.querySelector(".search-search-button")
           let divvv = document.querySelector(".div1-search")
           let closebutton= document.querySelector(".closebutton-searchbar")
           
-          buttonSSearch.addEventListener("click", () => {
+          buttonSSearch.addEventListener("click",function (){
               divvv.innerHTML =""
               fetch("http://localhost:3333/boat/Products", {
                   method: "POST", // or 'PUT'
@@ -523,12 +566,7 @@
           <h3 class="heading-of-carousels">BEST SELLERS</h3>
          
           <div readonly class="best_sellers">
-       
-         
-          <div class="curoselBtn1 carosel_flex">
-            <button class="carosel_left1"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right1"><i class="fa-solid fa-arrow-right"></i></button>
-          </div>
+
         </div>
           
         </section>
@@ -560,10 +598,7 @@
           </div>
         </section>
         <!-- ------------------------------------------------ -->
-          <div readonly class="daily_deals"></div>
-          <div class="curoselBtn2 carosel_flex">
-            <button class="carosel_left2"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right2"><i class="fa-solid fa-arrow-right"></i></button>
+          <div readonly class="daily_deals"> </div>
         </section>
         
         <section>
@@ -571,45 +606,27 @@
             Biggest Launches. Dopest Products. 🚀
           </h3>
           <div readonly class="biggest_launch"></div>
-          <div class="curoselBtn3 carosel_flex">
-            <button class="carosel_left3"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right3"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels">Smart Watches</h3>
           <div readonly class="smart_watches"></div>
-          <div class="curoselBtn4 carosel_flex">
-            <button class="carosel_left4"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right4"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels" id="trending_wireless_earphones">Trending Wireless</h3>
           <div readonly class="trending_wireless"></div>
-          <div class="curoselBt5 carosel_flex">
-            <button class="carosel_left5"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right5"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels" id="top_earbuds_amazing_product">Top Earbuds</h3>
           <div readonly class="top_earbuds"></div>
-          <div class="curoselBtn6 carosel_flex">
-            <button class="carosel_left6"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right6"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
 
         <section>
           <h3 class="heading-of-carousels">Trending Wired</h3>
           <div readonly class="trending_wired"></div>
-          <div class="curoselBtn7 carosel_flex">
-            <button class="carosel_left7"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right7"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels">Trending ANC</h3>
           <div readonly class="trending_anc"></div>
-          <div class="curoselBtn8 carosel_flex">
-            <button class="carosel_left8"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right8"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels">boAt | Superheroes</h3>
@@ -619,20 +636,11 @@
           </div>
 
           <div class="dc"></div>
-          <div class="curoselBt9 carosel_flex">
-            <button class="carosel_left9"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right9"><i class="fa-solid fa-arrow-right"></i></button>
           <div class="marvel"></div>
-          <div class="curoselBtn10 carosel_flex">
-            <button class="carosel_left10"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right10"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels" id="best_sound_home_audio">Home Audio</h3>
           <div readonly class="home_audio"></div>
-          <div class="curoselBtn11 carosel_flex">
-            <button class="carosel_left11"><i class="fa-solid fa-arrow-left"></i></button>
-          <button class="carosel_right11"><i class="fa-solid fa-arrow-right"></i></button>
         </section>
         <section>
           <h3 class="heading-of-carousels">Grab Now</h3>
@@ -640,7 +648,6 @@
         </section>
         <!-- ------------------------------------------- -->
         <div class="boat_blogs_container">
-          <!-- <div class="boat_blogs"> -->
           <h1 class="boat_blogs_heading">boAt Blogs</h1>
           <div class="boat_blogs_row"></div>
           <!-- </div> -->
@@ -939,72 +946,69 @@
               <button class="subscribe">Subscribe</button>
             </div>
             <div class="social-media-icons">
-              <button class="social-icon">
-                <i class="fa-brands fa-facebook"></i>
-              </button>
+             <a href="https://www.facebook.com/boat.nirvana/" class="social-icon-footer"> <button class="social-icon">
+              <i class="fa-brands fa-facebook"></i>
+            </button></a>
+             <a href="https://www.facebook.com/boat.nirvana/" class="social-icon-footer"> <button class="social-icon">
+              <i class="fa-brands fa-twitter"></i>
+            </button></a>
+             <a href="https://www.facebook.com/boat.nirvana/" class="social-icon-footer"> <button class="social-icon">
+              <i class="fa-brands fa-linkedin"></i>
+            </button></a>
+             <a href="https://www.facebook.com/boat.nirvana/" class="social-icon-footer"> <button class="social-icon">
+              <i class="fa-brands fa-youtube"></i>
+            </button></a>
+             <a href="https://www.facebook.com/boat.nirvana/" class="social-icon-footer"> <button class="social-icon">
+              <i class="fa-brands fa-instagram"></i>
+            </button></a>
 
-              <button class="social-icon">
-                <i class="fa-brands fa-twitter"></i>
-              </button>
-
-              <button class="social-icon">
-                <i class="fa-brands fa-linkedin"></i>
-              </button>
-
-              <button class="social-icon">
-                <i class="fa-brands fa-youtube"></i>
-              </button>
-
-              <button class="social-icon">
-                <i class="fa-brands fa-instagram"></i>
-              </button>
             </div>
           </div>
 
           <div class="shop-div">
             <h1>SHOP</h1>
             <div class="links-of-company">
-              <a href="">True Wireless Earbuds</a>
-              <a href="">Wireless Headphones</a>
-              <a href="">Wired Headphones</a>
-              <a href="">Wireless Speaker</a>
-              <a href="">Home Audio</a>
-              <a href="">Mobile Accessories</a>
-              <a href="">Smart Watches</a>
-              <a href="">TRebel</a>
-              <a href="">Misfit</a>
-              <a href="">Gift Card</a>
-              <a href="">Rock in India </a>
-              <a href="">Earn Rs 100</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">True Wireless Earbuds</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">Wireless Headphones</a>
+              <a href="https://www.boat-lifestyle.com/collections/wired-headphones">Wired Headphones</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">Wireless Speaker</a>
+              <a href="https://www.boat-lifestyle.com/collections/home-audio">Home Audio</a>
+              <a href="https://www.boat-lifestyle.com/collections/home-audio">Mobile Accessories</a>
+              <a href="https://www.boat-lifestyle.com/collections/smart-watches">Smart Watches</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">TRebel</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">Misfit</a>
+              <a href="https://www.boat-lifestyle.com/pages/earn-rewards-referring-friends?utm_source=referralprogram&utm_medium=referral_footer&utm_campaign=referralprogram">Gift Card</a>
+              <a href="https://www.boat-lifestyle.com/collections/true-wireless-earbuds">Rock in India </a>
+              <a href="https://www.boat-lifestyle.com/pages/earn-rewards-referring-friends?utm_source=referralprogram&utm_medium=referral_footer&utm_campaign=referralprogram">Earn Rs 100</a>
             </div>
           </div>
 
           <div class="help-div">
             <h1>HELP</h1>
             <div class="links-of-company">
-              <a href="">Track Your Order</a>
-              <a href="">Warranty and Support</a>
-              <a href="">Return Policy</a>
-              <a href="">Service Centers</a>
-              <a href="">Bulk Orders</a>
-              <a href="">FAQs</a>
-              <a href="">Why Buy Direct</a>
+              <a href="https://dtc.boat-lifestyle.com/track">Track Your Order</a>
+              <a href="https://www.boat-lifestyle.com/pages/frequently-asked-questions">Warranty and Support</a>
+              <a href="https://www.boat-lifestyle.com/pages/return-policy">Return Policy</a>
+              <a href="https://www.boat-lifestyle.com/pages/service-center-list">Service Centers</a>
+              <a href="https://www.boat-lifestyle.com/pages/service-center-list">Bulk Orders</a>
+              <a href="https://www.boat-lifestyle.com/pages/frequently-asked-questions">FAQs</a>
+              <a href="https://www.boat-lifestyle.com/pages/frequently-asked-questions">Why Buy Direct</a>
             </div>
           </div>
 
           <div class="company-info-div">
             <h1>COMPANY</h1>
             <div class="links-of-company">
-              <a href="">About Boat</a>
-              <a href="">News</a>
-              <a href="">Read Our Blog</a>
-              <a href="">Careers</a>
-              <a href="">Security</a>
-              <a href="">Terms of Service</a>
-              <a href="">Privacy Policy</a>
-              <a href="">Investor Relations</a>
-              <a href="">Social Responsibility</a>
-              <a href="">Warranty Policy</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">About Boat</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">News</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">Read Our Blog</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">Careers</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">Security</a>
+              <a href="https://www.boat-lifestyle.com/pages/who-are-we">Terms of Service</a>
+              <a href="https://www.boat-lifestyle.com/pages/privacy-policy">Privacy Policy</a>
+              <a href="https://www.boat-lifestyle.com/pages/privacy-policy">Investor Relations</a>
+              <a href="https://www.boat-lifestyle.com/pages/privacy-policy">Social Responsibility</a>
+              <a href="https://www.boat-lifestyle.com/pages/privacy-policy">Warranty Policy</a>
             </div>
           </div>
         </section>
@@ -1037,9 +1041,3 @@
   </body>
 </html>
 
-<!--  ============================search button function==============================-->
-
-
-
-
-<!--  -->

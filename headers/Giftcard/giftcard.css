@@ -174,7 +174,7 @@ hr{
     font-size: 20px;
     font-weight: bolder;
     color: white;
-    background-color: red;
+    background-color: rgb(145, 145, 145);
     margin: 10px;
     padding: 5px;
     border-radius: 8px;
@@ -183,8 +183,9 @@ hr{
 .buy_now_btn{
     font-size: 18px;
     font-weight: bolder;
-    color: red;
-    border: 2px solid red;
+    color: white;
+    background-color: rgb(155, 153, 153);
+    /* border: 2px solid black; */
     margin: 10px;
     padding: 5px;
     border-radius: 5px;

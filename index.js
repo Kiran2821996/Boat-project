@@ -1402,6 +1402,7 @@ main.addEventListener("click", (e) => {
            basItem.innerText=sum;
         cart_main.addEventListener("click", (e) => {
           
+          
           let updatePrice=document.querySelector(`#updatedd_${data[0]._id}`)
           let original_price = document.querySelector(
             `#updated_${data[0]._id}`
@@ -1414,7 +1415,9 @@ main.addEventListener("click", (e) => {
      
 
           if (e.target.id == `minu_${data[0]._id}`) {
+          
             if( basket[i].item >1){
+              e.stopPropagation()
               basket[i].item -= 1;
               quatity.innerText = basket[i].item;
               checkoutQuatity.innerText=basket[i].item;
@@ -1446,6 +1449,7 @@ main.addEventListener("click", (e) => {
            
           }
           else if (e.target.id == `plus_${data[0]._id}`) {
+            e.stopPropagation()
             console.log(basket[i])
             basket[i].item += 1;
             checkoutQuatity.innerText=basket[i].item;

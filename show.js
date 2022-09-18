@@ -9,7 +9,6 @@ let wrapper_container_of_show = document.querySelector(".wrapper-of-two-containe
 let  productsavedamt = document.querySelector(".save_your_money_para")
 
 
-
 let tranferData = JSON.parse(sessionStorage.getItem("transferdata"));
 
 console.log(tranferData);

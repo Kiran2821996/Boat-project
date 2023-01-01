@@ -92,7 +92,8 @@ console.log(cartArray,"oputhdgf");
 
   for(let i=0;i<cartArray.length;i++){
     const data = { _id : `${cartArray[i].id._id}` };
-    fetch("http://localhost:3333/boat/Products", {
+    fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",

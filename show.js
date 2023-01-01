@@ -14,7 +14,8 @@ let tranferData = JSON.parse(sessionStorage.getItem("transferdata"));
 console.log(tranferData);
 const showData = { _id: `${tranferData}` };
 
-fetch("http://localhost:3333/boat/Products", {
+fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
   method: "POST", // or 'PUT'
   headers: {
     "Content-Type": "application/json",

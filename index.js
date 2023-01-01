@@ -64,7 +64,7 @@ let basket = [];
 
 function generate() {
   const data1 = { description: "best_sellers" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -163,7 +163,7 @@ function generate() {
     });
 
   const data2 = { description: "daily_deals" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -259,7 +259,7 @@ function generate() {
     });
 
   const data3 = { description: "Biggest_Launches" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -356,7 +356,7 @@ function generate() {
       // biggest_launch+= `<p>Lorem, ipsum asodnzcoa  ajdis.</p>`
     });
   const data4 = { description: "Smart watches" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -453,7 +453,7 @@ function generate() {
    
     });
   const data5 = { description: "Trending_Wireless" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -550,7 +550,7 @@ function generate() {
 
     });
   const data6 = { description: "Top Earbuds" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -648,7 +648,7 @@ function generate() {
 
     });
   const data7 = { description: "trending_wired" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -744,7 +744,7 @@ function generate() {
   
     });
   const data8 = { description: "trending_ANC" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -841,7 +841,7 @@ function generate() {
   
     });
   const data9 = { description: "boAt | Superheroes" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -939,7 +939,7 @@ function generate() {
     });
   const data10 = { description: "Marvel" };
  
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -1037,7 +1037,7 @@ function generate() {
     });
   // ------------------------------------------------------------------------
   const data12 = { description: "video-products" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -1109,7 +1109,7 @@ function generate() {
 
   // -----------------------------------------------------------------------------
   const data11 = { description: "Home Audio" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -1324,7 +1324,7 @@ let sum=0;
 main.addEventListener("click", (e) => {
   const cartData = { productName: `${e.target.id}` };
 
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -1511,4 +1511,4 @@ topArrowBtn.addEventListener("click",function(){
     
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
-      
+})

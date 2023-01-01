@@ -21,7 +21,8 @@
     let div = document.querySelector(".div1-search")
     buttonSearch.addEventListener("click", () => {
         div.innerHTML =""
-        fetch("http://localhost:3333/boat/Products", {
+        fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",

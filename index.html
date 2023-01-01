@@ -412,7 +412,7 @@
         function enterKeyPressed(event){
           if(event.keyCode==13){
             divvv.innerHTML =""
-              fetch("http://localhost:3333/boat/Products", {
+              fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
                   method: "POST", // or 'PUT'
                   headers: {
                       "Content-Type": "application/json",
@@ -460,7 +460,7 @@
           
           buttonSSearch.addEventListener("click",function (){
               divvv.innerHTML =""
-              fetch("http://localhost:3333/boat/Products", {
+              fetch("https://boat-backend-1ffa.onrender.com/boat/Products", {
                   method: "POST", // or 'PUT'
                   headers: {
                       "Content-Type": "application/json",

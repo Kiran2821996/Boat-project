@@ -47,7 +47,8 @@ const boatBlogRow = document.querySelector(".boat_blogs_row");
 
 function generateEarphoneGuide() {
   const data = { description: "boAt Blogs 1" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -74,7 +75,8 @@ generateEarphoneGuide();
 
 function smartWatchGuide() {
   const data = { description: "boAt Blogs 2" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -100,7 +102,8 @@ smartWatchGuide();
 
 function groomingKit() {
   const data = { description: "boAt Blogs 3" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",
@@ -131,7 +134,8 @@ const ContentRow = document.querySelector(".content_row");
 function whatTheySayAboutUs() {
 
 const data = { description: "What They Say About Us" };
-  fetch("http://localhost:3333/boat/Products", {
+  fetch("https://boat-backend-1ffa.onrender.com/boat/Products
+", {
     method: "POST", // or 'PUT'
     headers: {
       "Content-Type": "application/json",

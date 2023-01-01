@@ -9,7 +9,7 @@ let arr = [
 let btn = document.querySelectorAll(".logo-item")
 
 for (let i = 0; i < btn.length; i++) {
-    btn[i].addEventListener("mouseover", function (e) {
+    btn[i].addEventListener("mouseover", function () {
 
         switch (i) {
             case 0:
@@ -25,6 +25,9 @@ for (let i = 0; i < btn.length; i++) {
 
             case 3:
                 para1.innerHTML = arr[3]
+                break
+            case 4:
+                para1.innerHTML = arr[4]
                 break
         }
     });

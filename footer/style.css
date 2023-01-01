@@ -22,6 +22,8 @@ p{
     font-size: xx-large;
     margin: 10rem;
 }
+
+
 .buttons-div {
     display: flex;
     margin-top: -3rem;
@@ -36,6 +38,9 @@ p{
     height: 5rem;
 }
 
+.first-para{
+  transition: 1s;
+}
 .logo-image-news:hover{
     opacity: 1.5;
     filter: none;
@@ -132,6 +137,7 @@ p{
 .social-media-icons {
     display: flex;
     gap: 01rem;
+    margin-left: 4rem;
 
 }
 .btnn{
@@ -142,9 +148,9 @@ p{
     color: rgb(255, 255, 255);
 }
 
+
 .social-icon:hover {
     cursor: pointer;
-    background-color: aliceblue;
     transition: 0.5s;
     color: black;
 }
